@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Persevex - Careers</title>
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f7;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        /* Header Styles */
+        .header {
+            background-color: #fff;
+            padding: 15px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+        
+        .logo-image {
+            height: 40px;
+            margin-right: 10px;
+        }
+        
+        .logo {
+            font-size: 18px;
+            font-weight: 700;
+            color: #0a2463;
+            text-decoration: none;
+        }
+        
+        .back-button {
+            display: inline-block;
+            background-color: #0a2463;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background-color 0.3s, transform 0.2s;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .back-button:hover {
+            background-color: #051c4e;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+        
+        /* Main Content */
+        .container {
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 0 15px;
+        }
+        
+        /* Accordion Styles */
+        .accordion {
+            margin-bottom: 20px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        
+        .accordion:hover {
+            transform: translateY(-3px);
+        }
+        
+        .accordion-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 20px;
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .accordion-header .icon {
+            font-size: 24px;
+            transition: transform 0.3s;
+        }
+        
+        .accordion-content {
+            background-color: white;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        
+        .accordion-content-inner {
+            padding: 25px;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Department Colors */
+        .campus-delegate {
+            background-color: #0a2463;
+        }
+        
+        .sales-marketing {
+            background-color: #0466c8;
+        }
+        
+        .human-resources {
+            background-color: #0353a4;
+        }
+        
+        .operations {
+            background-color: #023e7d;
+        }
+        
+        .collaborations {
+            background-color: #002855;
+        }
+        
+        /* Career Section Styles */
+        .career-button {
+            display: inline-block;
+            background-color: #0466c8;
+            color: white;
+            padding: 10px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 500;
+            margin: 15px 0;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .career-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+        
+        .section-title {
+            color: #0a2463;
+            font-size: 28px;
+            font-weight: 700;
+            margin: 15px 0;
+            text-align: center;
+        }
+        
+        .section-subtitle {
+            font-size: 18px;
+            text-align: center;
+            margin-bottom: 25px;
+            color: #555;
+        }
+        
+        .contact-heading {
+            color: #0a2463;
+            font-size: 22px;
+            font-weight: 600;
+            margin: 25px 0 20px;
+            text-align: center;
+        }
+        
+        .contact-info {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 15px 0;
+            transition: transform 0.2s;
+        }
+        
+        .contact-info:hover {
+            transform: translateY(-2px);
+        }
+        
+        .contact-icon {
+            width: 45px;
+            height: 45px;
+            background-color: #0466c8;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .contact-icon svg {
+            width: 22px;
+            height: 22px;
+            fill: white;
+        }
+        
+        .contact-text {
+            font-size: 16px;
+            color: #333;
+        }
+        
+        /* Footer Styles */
+        .footer {
+            padding: 30px 0;
+            background-color: #f5f5f7;
+            border-top: 1px solid #ddd;
+            margin-top: 30px;
+        }
+        
+        .contact-buttons {
+            display: flex;
+            justify-content: space-around;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        
+        .contact-button {
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .contact-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .chat-button {
+            background-color: #0466c8;
+        }
+        
+        .whatsapp-button {
+            background-color: #25D366;
+        }
+        
+        .contact-button svg {
+            width: 30px;
+            height: 30px;
+            fill: white;
+        }
+        
+        /* Active State */
+        .active .accordion-header .icon {
+            transform: rotate(45deg);
+        }
+        
+        .active .accordion-content {
+            max-height: 500px;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 15px;
+                padding: 10px 0;
+            }
+            
+            .section-title {
+                font-size: 24px;
+            }
+            
+            .logo-image {
+                height: 35px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <a href="index.html" class="logo-container">
+                <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo.jpg-AmHJgbQGvd4z31iR28Zj9j5NsFjAjP.jpeg" alt="Persevex Logo" class="logo-image">
+                <span class="logo">Persevex</span>
+            </a>
+            <a href="index.html" class="back-button">Back to home</a>
+        </div>
+    </header>
+    
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Campus Delegate -->
+        <div class="accordion" id="campus-delegate">
+            <div class="accordion-header campus-delegate">
+                <span>PERSEVEX CAMPUS DELEGATE</span>
+                <span class="icon">+</span>
+            </div>
+            <div class="accordion-content">
+                <div class="accordion-content-inner">
+                    <div class="career-button">CAREER</div>
+                    <h2 class="section-title">CAMPUS DELEGATE</h2>
+                    <p class="section-subtitle">TO JOIN OUR CAMPUS DELEGATE TEAM</p>
+                    <h3 class="contact-heading">REACH US THROUGH</h3>
+                    
+                    <div class="contact-info">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M20 4H4C2.9 4 2 4.9 2 6V18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6C22 4.9 21.1 4 20 4ZM20 8L12 13L4 8V6L12 11L20 6V8Z"/>
+                            </svg>
+                        </div>
+                        <span class="contact-text">support@persevex.com</span>
+                    </div>
+                    
+                    <div class="contact-info">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M6.62 10.79C8.06 13.62 10.38 15.94 13.21 17.38L15.41 15.18C15.69 14.9 16.08 14.82 16.43 14.93C17.55 15.3 18.75 15.5 20 15.5C20.55 15.5 21 15.95 21 16.5V20C21 20.55 20.55 21 20 21C10.61 21 3 13.39 3 4C3 3.45 3.45 3 4 3H7.5C8.05 3 8.5 3.45 8.5 4C8.5 5.25 8.7 6.45 9.07 7.57C9.18 7.92 9.1 8.31 8.82 8.59L6.62 10.79Z"/>
+                            </svg>
+                        </div>
+                        <span class="contact-text">7337831778</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Sales & Marketing -->
+        <div class="accordion" id="sales-marketing">
+            <div class="accordion-header sales-marketing">
+                <span>SALES & MARKETING</span>
+                <span class="icon">+</span>
+            </div>
+            <div class="accordion-content">
+                <div class="accordion-content-inner">
+                    <div class="career-button">CAREER</div>
+                    <h2 class="section-title">SALES & MARKETING</h2>
+                    <p class="section-subtitle">TO JOIN OUR SALES & MARKETING TEAM</p>
+                    <h3 class="contact-heading">REACH US THROUGH</h3>
+                    
+                    <div class="contact-info">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M20 4H4C2.9 4 2 4.9 2 6V18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6C22 4.9 21.1 4 20 4ZM20 8L12 13L4 8V6L12 11L20 6V8Z"/>
+                            </svg>
+                        </div>
+                        <span class="contact-text">support@persevex.com</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Human Resources -->
+        <div class="accordion" id="human-resources">
+            <div class="accordion-header human-resources">
+                <span>HUMAN RESOURCES TEAM</span>
+                <span class="icon">+</span>
+            </div>
+            <div class="accordion-content">
+                <div class="accordion-content-inner">
+                    <div class="career-button">CAREER</div>
+                    <h2 class="section-title">HUMAN RESOURCES</h2>
+                    <p class="section-subtitle">TO JOIN OUR HUMAN RESOURCES TEAM</p>
+                    <h3 class="contact-heading">REACH US THROUGH</h3>
+                    
+                    <div class="contact-info">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M20 4H4C2.9 4 2 4.9 2 6V18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6C22 4.9 21.1 4 20 4ZM20 8L12 13L4 8V6L12 11L20 6V8Z"/>
+                            </svg>
+                        </div>
+                        <span class="contact-text">support@persevex.com</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Operations Team -->
+        <div class="accordion" id="operations">
+            <div class="accordion-header operations">
+                <span>OPERATIONS TEAM</span>
+                <span class="icon">+</span>
+            </div>
+            <div class="accordion-content">
+                <div class="accordion-content-inner">
+                    <div class="career-button">CAREER</div>
+                    <h2 class="section-title">OPERATIONS</h2>
+                    <p class="section-subtitle">TO JOIN OUR OPERATIONS TEAM</p>
+                    <h3 class="contact-heading">REACH US THROUGH</h3>
+                    
+                    <div class="contact-info">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M20 4H4C2.9 4 2 4.9 2 6V18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6C22 4.9 21.1 4 20 4ZM20 8L12 13L4 8V6L12 11L20 6V8Z"/>
+                            </svg>
+                        </div>
+                        <span class="contact-text">support@persevex.com</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Collaborations -->
+        <div class="accordion" id="collaborations">
+            <div class="accordion-header collaborations">
+                <span>COLLABORATIONS</span>
+                <span class="icon">+</span>
+            </div>
+            <div class="accordion-content">
+                <div class="accordion-content-inner">
+                    <div class="career-button">CAREER</div>
+                    <h2 class="section-title">COLLABORATIONS</h2>
+                    <p class="section-subtitle">TO ASSOCIATE WITH US</p>
+                    <h3 class="contact-heading">REACH US THROUGH</h3>
+                    
+                    <div class="contact-info">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M20 4H4C2.9 4 2 4.9 2 6V18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6C22 4.9 21.1 4 20 4ZM20 8L12 13L4 8V6L12 11L20 6V8Z"/>
+                            </svg>
+                        </div>
+                        <span class="contact-text">support@persevex.com</span>
+                    </div>
+                    
+                    <div class="contact-info">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M6.62 10.79C8.06 13.62 10.38 15.94 13.21 17.38L15.41 15.18C15.69 14.9 16.08 14.82 16.43 14.93C17.55 15.3 18.75 15.5 20 15.5C20.55 15.5 21 15.95 21 16.5V20C21 20.55 20.55 21 20 21C10.61 21 3 13.39 3 4C3 3.45 3.45 3 4 3H7.5C8.05 3 8.5 3.45 8.5 4C8.5 5.25 8.7 6.45 9.07 7.57C9.18 7.92 9.1 8.31 8.82 8.59L6.62 10.79Z"/>
+                            </svg>
+                        </div>
+                        <span class="contact-text">7337831778</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="contact-buttons">
+            <a href="#" class="contact-button chat-button">
+                <svg viewBox="0 0 24 24">
+                    <path d="M20 2H4C2.9 2 2 2.9 2 4V22L6 18H20C21.1 18 22 17.1 22 16V4C22 2.9 21.1 2 20 2ZM20 16H6L4 18V4H20V16Z"/>
+                </svg>
+            </a>
+            <a href="https://wa.me/917337831778" class="contact-button whatsapp-button">
+                <svg viewBox="0 0 24 24">
+                    <path d="M16.75 13.96c.25.13.41.2.46.3.06.11.04.61-.21 1.18-.2.56-1.24 1.1-1.7 1.12-.46.02-.47.36-2.96-.73-2.49-1.09-3.99-3.75-4.11-3.92-.12-.17-.96-1.38-.92-2.61.05-1.22.69-1.8.95-2.04.24-.26.51-.29.68-.26h.47c.15 0 .36-.06.55.45l.69 1.87c.06.13.1.28.01.44l-.27.41-.39.42c-.12.12-.26.25-.12.5.12.26.62 1.09 1.32 1.78.91.88 1.71 1.17 1.95 1.3.24.14.39.12.54-.04l.81-.94c.19-.25.35-.19.58-.11l1.67.88M12 2a10 10 0 0 1 10 10 10 10 0 0 1-10 10c-1.97 0-3.8-.57-5.35-1.55L2 22l1.55-4.65A9.969 9.969 0 0 1 2 12 10 10 0 0 1 12 2m0 2a8 8 0 0 0-8 8c0 1.72.54 3.31 1.46 4.61L4.5 19.5l2.89-.96A7.95 7.95 0 0 0 12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8z"/>
+                </svg>
+            </a>
+        </div>
+    </footer>
+    
+    <script>
+        // Accordion functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const accordions = document.querySelectorAll('.accordion');
+            
+            accordions.forEach(accordion => {
+                const header = accordion.querySelector('.accordion-header');
+                
+                header.addEventListener('click', function() {
+                    // Close all other accordions
+                    accordions.forEach(item => {
+                        if (item !== accordion && item.classList.contains('active')) {
+                            item.classList.remove('active');
+                        }
+                    });
+                    
+                    // Toggle current accordion
+                    accordion.classList.toggle('active');
+                });
+            });
+            
+            // Open the first accordion by default
+            if (accordions.length > 0) {
+                accordions[0].classList.add('active');
+            }
+        });
+    </script>
+</body>
+</html>
