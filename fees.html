@@ -1,0 +1,1082 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Persevex - Learn, Grow, Succeed</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Base Styles */
+        :root {
+            --primary-color: #1a2b4e;
+            --accent-color: #ffc107;
+            --blue-card: #00e1ff;
+            --green-card: #c1ff00;
+            --orange-card: #ff9d00;
+            --light-color: #f8f9fa;
+            --dark-color: #212529;
+            --text-color: #333;
+            --border-color: #dee2e6;
+            --transition: all 0.3s ease;
+            --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            --border-radius: 5px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: #fff;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--dark-color);
+            transition: var(--transition);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        .section-header p {
+            font-size: 1.1rem;
+            color: #666;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            text-align: center;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background-color: #0f1a30;
+        }
+
+        /* Header */
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 15px 0;
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 50px;
+        }
+
+        .logo-text {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--primary-color);
+            margin-left: 10px;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            color: var(--primary-color);
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+
+        .btn-contact {
+            background-color: var(--primary-color);
+            color: white !important;
+            padding: 8px 20px;
+            border-radius: var(--border-radius);
+        }
+
+        .btn-contact:hover {
+            background-color: #0f1a30;
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background-color: var(--primary-color);
+            margin: 5px 0;
+            transition: var(--transition);
+        }
+
+        /* Hero Section */
+        .hero {
+            background-color: #000;
+            color: white;
+            padding: 150px 0 100px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            line-height: 1.2;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 span {
+            color: var(--accent-color);
+        }
+
+        /* Pricing Section */
+        .pricing {
+            background-color: #000;
+            padding-top: 0;
+            padding-bottom: 100px;
+        }
+
+        .pricing-cards {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .pricing-card {
+            background-color: white;
+            border-radius: 15px;
+            overflow: hidden;
+            width: 100%;
+            max-width: 350px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .pricing-card.blue .card-header {
+            background-color: var(--blue-card);
+        }
+
+        .pricing-card.green .card-header {
+            background-color: var(--green-card);
+        }
+
+        .pricing-card.orange .card-header {
+            background-color: var(--orange-card);
+        }
+
+        .card-header {
+            padding: 30px 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .planet {
+            width: 80px;
+            height: 80px;
+            background-color: rgba(255, 87, 51, 0.8);
+            border-radius: 50%;
+            position: absolute;
+            top: -40px;
+            left: 50%;
+            transform: translateX(-50%);
+            box-shadow: 0 0 20px rgba(255, 87, 51, 0.5);
+        }
+
+        .card-header h3 {
+            margin-top: 30px;
+            font-size: 1.5rem;
+            color: #333;
+        }
+
+        .card-header h2 {
+            font-size: 2.5rem;
+            margin-top: 10px;
+            color: #333;
+        }
+
+        .card-body {
+            padding: 30px 20px;
+        }
+
+        .card-body ul li {
+            padding: 10px 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .card-body ul li i {
+            margin-right: 10px;
+            color: #28a745;
+        }
+
+        .card-body ul li.disabled {
+            color: #aaa;
+        }
+
+        .card-body ul li.disabled i {
+            color: #dc3545;
+        }
+
+        .card-footer {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .select-plan {
+            display: inline-block;
+            padding: 10px 25px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 5px;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .select-plan:hover {
+            background-color: #0f1a30;
+        }
+
+        .popular-tag {
+            position: absolute;
+            top: 20px;
+            right: -30px;
+            background-color: #ff9800;
+            color: white;
+            padding: 5px 30px;
+            transform: rotate(45deg);
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        /* Features Section */
+        .features {
+            background-color: #f9f9f9;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background-color: white;
+            border-radius: var(--border-radius);
+            padding: 30px;
+            text-align: center;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            background-color: rgba(26, 43, 78, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+        }
+
+        .feature-icon i {
+            font-size: 30px;
+            color: var(--primary-color);
+        }
+
+        .feature-card h3 {
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        .feature-card p {
+            color: #666;
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            background-color: white;
+        }
+
+        .testimonial-slider {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        .testimonial-slide {
+            display: none;
+            animation: fadeIn 0.5s ease forwards;
+        }
+
+        .testimonial-slide.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .testimonial-content {
+            background-color: #f9f9f9;
+            padding: 40px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            text-align: center;
+        }
+
+        .testimonial-content p {
+            font-size: 1.1rem;
+            font-style: italic;
+            margin-bottom: 30px;
+            color: #555;
+        }
+
+        .student-info {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .student-info img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .student-info h4 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+            color: var(--primary-color);
+        }
+
+        .student-info p {
+            font-size: 0.9rem;
+            margin: 0;
+            color: #666;
+        }
+
+        .testimonial-controls {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 30px;
+        }
+
+        .prev-btn, .next-btn {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: #666;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .prev-btn:hover, .next-btn:hover {
+            color: var(--primary-color);
+        }
+
+        .testimonial-dots {
+            display: flex;
+            gap: 10px;
+            margin: 0 20px;
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #ddd;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .dot.active {
+            background-color: var(--primary-color);
+        }
+
+        /* Contact Section */
+        .contact {
+            background-color: #f9f9f9;
+        }
+
+        .contact-content {
+            display: flex;
+            gap: 50px;
+        }
+
+        .contact-info, .contact-form {
+            flex: 1;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 30px;
+        }
+
+        .contact-item i {
+            font-size: 24px;
+            color: var(--primary-color);
+            margin-right: 20px;
+            margin-top: 5px;
+        }
+
+        .contact-item h3 {
+            margin-bottom: 5px;
+            font-size: 1.2rem;
+            color: var(--primary-color);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-3px);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius);
+            font-family: inherit;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .form-group input:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+
+        .form-group textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 70px 0 20px;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 50px;
+        }
+
+        .footer-logo img {
+            height: 60px;
+            margin-bottom: 15px;
+        }
+
+        .footer-logo p {
+            color: #aaa;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 50px;
+        }
+
+        .footer-column h3 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-column ul li a {
+            color: #aaa;
+            transition: var(--transition);
+        }
+
+        .footer-column ul li a:hover {
+            color: var(--accent-color);
+            padding-left: 5px;
+        }
+
+        .footer-bottom {
+            padding-top: 20px;
+            border-top: 1px solid #2c3e50;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-bottom p {
+            color: #aaa;
+        }
+
+        .footer-bottom-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .footer-bottom-links a {
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+
+        .footer-bottom-links a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Animation for planets */
+        @keyframes float {
+            0% {
+                transform: translateX(-50%) translateY(0);
+            }
+            50% {
+                transform: translateX(-50%) translateY(-10px);
+            }
+            100% {
+                transform: translateX(-50%) translateY(0);
+            }
+        }
+
+        .planet {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        /* Animation for sections */
+        section {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        
+        section.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+
+            .pricing-cards {
+                gap: 20px;
+            }
+
+            .contact-content {
+                flex-direction: column;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                gap: 40px;
+            }
+
+            .footer-logo {
+                text-align: center;
+            }
+
+            .footer-links {
+                justify-content: space-between;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background-color: white;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                transition: var(--transition);
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .nav-links li {
+                margin: 15px 0;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .hamburger.active span:nth-child(1) {
+                transform: rotate(45deg) translate(5px, 5px);
+            }
+
+            .hamburger.active span:nth-child(2) {
+                opacity: 0;
+            }
+
+            .hamburger.active span:nth-child(3) {
+                transform: rotate(-45deg) translate(7px, -6px);
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .pricing-cards {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 30px;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .section-header h2 {
+                font-size: 2rem;
+            }
+
+            .testimonial-content {
+                padding: 30px 20px;
+            }
+
+            .footer-bottom-links {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <!-- Logo image -->
+                <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Untitled%20design%20%283%29-1C4d5pDDYesIN4c8ES4k9h2De8wjFR.png" alt="Persevex Logo">
+                <span class="logo-text">Persevex</span>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="carrer.html">Careers</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1><span>Affordable</span> and <span>student friendly</span> prices.</h1>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing">
+        <div class="container">
+            <div class="pricing-cards">
+                <!-- Self Paced Card -->
+                <div class="pricing-card blue">
+                    <div class="card-header">
+                        <div class="planet"></div>
+                        <h3>SELF PACED</h3>
+                        <h2>₹5000</h2>
+                    </div>
+                    <div class="card-body">
+                        <ul>
+                            <li><i class="fas fa-check"></i> Recorded Lectures</li>
+                            <li><i class="fas fa-check"></i> Real Time Projects</li>
+                            <li><i class="fas fa-check"></i> 4+ Hrs of Live Sessions</li>
+                            <li><i class="fas fa-check"></i> One On One Doubt Sessions</li>
+                            <li><i class="fas fa-check"></i> Certifications</li>
+                            <li class="disabled"><i class="fas fa-times"></i> Mentor Support</li>
+                            <li class="disabled"><i class="fas fa-times"></i> Placement Guidance</li>
+                            <li class="disabled"><i class="fas fa-times"></i> Interview Assistance</li>
+                        </ul>
+                    </div>
+                    <div class="card-footer">
+                        <a href="https://payments.cashfree.com/forms?code=PERSEVE_REGISTRATION" class="select-plan">SELECT PLAN</a>
+                    </div>
+                </div>
+
+                <!-- Mentor Led Card -->
+                <div class="pricing-card green">
+                    <div class="card-header">
+                        <div class="planet"></div>
+                        <h3>MENTOR LED</h3>
+                        <h2>₹9000</h2>
+                    </div>
+                    <div class="card-body">
+                        <ul>
+                            <li><i class="fas fa-check"></i> Recorded Lectures</li>
+                            <li><i class="fas fa-check"></i> Real Time Projects</li>
+                            <li><i class="fas fa-check"></i> 16+ Hrs of Live Sessions</li>
+                            <li><i class="fas fa-check"></i> One On One Doubt Sessions</li>
+                            <li><i class="fas fa-check"></i> Certifications</li>
+                            <li><i class="fas fa-check"></i> Mentor Support</li>
+                            <li class="disabled"><i class="fas fa-times"></i> Placement Guidance</li>
+                            <li class="disabled"><i class="fas fa-times"></i> Interview Assistance</li>
+                        </ul>
+                    </div>
+                    <div class="popular-tag">Most Popular</div>
+                    <div class="card-footer">
+                        <a href="https://payments.cashfree.com/forms?code=ADVANCE_REGS" class="select-plan">SELECT PLAN</a>
+                    </div>
+                </div>
+
+                <!-- Advance Card -->
+                <div class="pricing-card orange">
+                    <div class="card-header">
+                        <div class="planet"></div>
+                        <h3>ADVANCE</h3>
+                        <h2>₹13000</h2>
+                    </div>
+                    <div class="card-body">
+                        <ul>
+                            <li><i class="fas fa-check"></i> Recorded Lectures</li>
+                            <li><i class="fas fa-check"></i> Real Time Projects</li>
+                            <li><i class="fas fa-check"></i> 24+ Hrs of Live Sessions</li>
+                            <li><i class="fas fa-check"></i> One On One Doubt Sessions</li>
+                            <li><i class="fas fa-check"></i> Certifications</li>
+                            <li><i class="fas fa-check"></i> Mentor Support</li>
+                            <li><i class="fas fa-check"></i> Placement Guidance</li>
+                            <li><i class="fas fa-check"></i> Interview Assistance</li>
+                        </ul>
+                    </div>
+                    <div class="card-footer">
+                        <a href="https://payments.cashfree.com/forms?code=ADV_REGS" class="select-plan">SELECT PLAN</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why Choose Persevex?</h2>
+                <p>We provide comprehensive learning solutions to help you succeed</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3>Industry Relevant Curriculum</h3>
+                    <p>Our courses are designed by industry experts to ensure you learn skills that are in demand.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Expert Mentors</h3>
+                    <p>Learn from professionals with years of experience in their respective fields.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-project-diagram"></i>
+                    </div>
+                    <h3>Hands-on Projects</h3>
+                    <p>Apply your knowledge to real-world projects that enhance your portfolio.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <h3>Recognized Certifications</h3>
+                    <p>Earn certificates that are recognized by top companies in the industry.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile Navigation
+            const hamburger = document.querySelector('.hamburger');
+            const navLinks = document.querySelector('.nav-links');
+
+            if (hamburger) {
+                hamburger.addEventListener('click', function() {
+                    this.classList.toggle('active');
+                    navLinks.classList.toggle('active');
+                });
+            }
+
+            // Close mobile menu when clicking on a nav link
+            const navItems = document.querySelectorAll('.nav-links a');
+            navItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    hamburger.classList.remove('active');
+                    navLinks.classList.remove('active');
+                });
+            });
+
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        const headerHeight = document.querySelector('header').offsetHeight;
+                        const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+                        
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            // Header scroll effect
+            const header = document.querySelector('header');
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 50) {
+                    header.style.padding = '10px 0';
+                    header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+                } else {
+                    header.style.padding = '15px 0';
+                    header.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.1)';
+                }
+            });
+
+            // Testimonial Slider
+            const testimonialSlides = document.querySelectorAll('.testimonial-slide');
+            const dots = document.querySelectorAll('.dot');
+            const prevBtn = document.querySelector('.prev-btn');
+            const nextBtn = document.querySelector('.next-btn');
+            let currentSlide = 0;
+
+            function showSlide(index) {
+                testimonialSlides.forEach(slide => slide.classList.remove('active'));
+                dots.forEach(dot => dot.classList.remove('active'));
+                
+                testimonialSlides[index].classList.add('active');
+                dots[index].classList.add('active');
+                currentSlide = index;
+            }
+
+            if (prevBtn && nextBtn) {
+                prevBtn.addEventListener('click', function() {
+                    currentSlide = (currentSlide - 1 + testimonialSlides.length) % testimonialSlides.length;
+                    showSlide(currentSlide);
+                });
+
+                nextBtn.addEventListener('click', function() {
+                    currentSlide = (currentSlide + 1) % testimonialSlides.length;
+                    showSlide(currentSlide);
+                });
+            }
+
+            if (dots.length > 0) {
+                dots.forEach(dot => {
+                    dot.addEventListener('click', function() {
+                        const slideIndex = parseInt(this.getAttribute('data-index'));
+                        showSlide(slideIndex);
+                    });
+                });
+            }
+
+            // Auto slide testimonials
+            let testimonialInterval = setInterval(function() {
+                currentSlide = (currentSlide + 1) % testimonialSlides.length;
+                showSlide(currentSlide);
+            }, 5000);
+
+            // Pause auto slide on hover
+            const testimonialSlider = document.querySelector('.testimonial-slider');
+            if (testimonialSlider) {
+                testimonialSlider.addEventListener('mouseenter', function() {
+                    clearInterval(testimonialInterval);
+                });
+
+                testimonialSlider.addEventListener('mouseleave', function() {
+                    testimonialInterval = setInterval(function() {
+                        currentSlide = (currentSlide + 1) % testimonialSlides.length;
+                        showSlide(currentSlide);
+                    }, 5000);
+                });
+            }
+
+            // Contact Form Submission
+            const contactForm = document.getElementById('contactForm');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Get form values
+                    const name = document.getElementById('name').value;
+                    const email = document.getElementById('email').value;
+                    const subject = document.getElementById('subject').value;
+                    const message = document.getElementById('message').value;
+                    
+                    // Simple form validation
+                    if (!name || !email || !message) {
+                        alert('Please fill in all required fields.');
+                        return;
+                    }
+                    
+                    // Here you would typically send the form data to a server
+                    // For this example, we'll just show a success message
+                    alert('Thank you for your message! We will get back to you soon.');
+                    contactForm.reset();
+                });
+            }
+
+            // Add animation to pricing cards
+            const pricingCards = document.querySelectorAll('.pricing-card');
+            pricingCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-15px)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                });
+            });
+
+            // Reveal animations on scroll
+            function revealOnScroll() {
+                const sections = document.querySelectorAll('section');
+                sections.forEach(section => {
+                    const sectionTop = section.getBoundingClientRect().top;
+                    const windowHeight = window.innerHeight;
+                    if (sectionTop < windowHeight * 0.75) {
+                        section.classList.add('revealed');
+                    }
+                });
+            }
+
+            // Initial check and add scroll event
+            revealOnScroll();
+            window.addEventListener('scroll', revealOnScroll);
+        });
+    </script>
+</body>
+</html>
