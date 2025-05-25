@@ -1,0 +1,3797 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Persevex - Learn-Grow-Succeed</title>
+<link rel="apple-touch-icon" sizes="180x180" href="favicon.png">
+<link rel="icon" type="image/png" sizes="180x180" href="/favicon.png.png">
+<link rel="icon" type="image/png" sizes="512x512" href="/favicon.png.png">
+
+<!-- Favicon links -->
+<link rel="icon" href="logo.jpeg" type="image/jpeg">
+<link rel="shortcut icon" href="logo.jpeg" type="image/jpeg">
+<link rel="apple-touch-icon" href="logo.jpeg">
+<link rel="icon" href="favicon.png" type="image/png">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+    /* Premium, clean styling */
+    :root {
+        --primary-color: #0a2540;
+        --primary-dark: #061a2e;
+        --secondary-color: #00b8d9;
+        --secondary-dark: #00a0c0;
+        --accent-green: #0db785;
+        --accent-gold: #ffc107;
+        --text-color: #333;
+        --text-light: #6c757d;
+        --bg-color: #f8f9fa;
+        --bg-light: #ffffff;
+        --border-color: #e9ecef;
+        --internship-green: #0db785;
+        --premium-gradient: linear-gradient(135deg, #0a2540 0%, #1a5b92 100%);
+        --gold-gradient: linear-gradient(135deg, #ffb700 0%, #ffd54f 100%);
+        --green-gradient: linear-gradient(135deg, #0db785 0%, #4caf50 100%);
+        --blue-gradient: linear-gradient(135deg, #00b8d9 0%, #0288d1 100%);
+        --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        --hover-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Inter', sans-serif;
+        line-height: 1.6;
+        color: var(--text-color);
+        background-color: var(--bg-color);
+    }
+
+    .container {
+        width: 100%;
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    section {
+        padding: 100px 0;
+        position: relative;
+        overflow: hidden;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        color: var(--primary-color);
+        margin-bottom: 1rem;
+        font-weight: 700;
+        letter-spacing: -0.02em;
+        line-height: 1.3;
+    }
+
+    p {
+        margin-bottom: 1rem;
+        font-size: 1.05rem;
+        line-height: 1.7;
+    }
+
+    a {
+        color: var(--primary-color);
+        text-decoration: none;
+        transition: all 0.3s ease;
+    }
+
+    a:hover {
+        color: var(--secondary-color);
+    }
+
+    .btn {
+        display: inline-block;
+        padding: 14px 28px;
+        background-color: var(--primary-color);
+        color: white;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 12px rgba(10, 37, 64, 0.15);
+    }
+
+    .btn:hover {
+        background-color: var(--primary-dark);
+        transform: translateY(-3px);
+        box-shadow: 0 8px 16px rgba(10, 37, 64, 0.2);
+        text-decoration: none;
+    }
+
+    .btn-secondary {
+        background-color: var(--secondary-color);
+        color: white;
+    }
+
+    .btn-secondary:hover {
+        background-color: var(--secondary-dark);
+    }
+
+    .btn-outline {
+        background-color: transparent;
+        border: 2px solid var(--primary-color);
+        color: var(--primary-color);
+    }
+
+    .btn-outline:hover {
+        background-color: var(--primary-color);
+        color: white;
+    }
+
+    /* Header */
+    header {
+        background-color: rgba(255, 255, 255, 0.98);
+        box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        transition: all 0.3s ease;
+    }
+
+    header.scrolled {
+        padding: 5px 0;
+        background-color: rgba(255, 255, 255, 0.98);
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 0;
+    }
+
+    .logo {
+        display: flex;
+        align-items: center;
+    }
+
+    .logo img {
+        height: 50px;
+        margin-right: 12px;
+        transition: all 0.3s ease;
+    }
+
+    .logo span {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--primary-color);
+        letter-spacing: -0.02em;
+    }
+
+    .nav-links {
+        display: flex;
+        list-style: none;
+    }
+
+    .nav-links li {
+        margin-left: 40px;
+    }
+
+    .nav-links a {
+        color: var(--text-color);
+        font-weight: 500;
+        position: relative;
+        padding-bottom: 5px;
+        font-size: 1.05rem;
+    }
+
+    .nav-links a:hover {
+        color: var(--secondary-color);
+        text-decoration: none;
+    }
+
+    .nav-links a::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: var(--secondary-color);
+        transition: width 0.3s ease;
+    }
+
+    .nav-links a:hover::after {
+        width: 100%;
+    }
+
+    .nav-toggle {
+        display: none;
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+        color: var(--primary-color);
+    }
+
+    /* Hero Section */
+    .hero {
+        background: var(--premium-gradient);
+        color: white;
+        padding: 160px 0 140px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .hero::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+        background-size: cover;
+        background-position: center;
+        opacity: 0.2;
+        z-index: 0;
+    }
+
+    .hero::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100px;
+        background: linear-gradient(to top, rgba(248, 249, 250, 1), rgba(248, 249, 250, 0));
+        z-index: 1;
+    }
+
+    .hero .container {
+        position: relative;
+        z-index: 2;
+    }
+
+    .hero h1 {
+        font-size: 4rem;
+        margin-bottom: 25px;
+        color: white;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+        line-height: 1.2;
+        font-weight: 800;
+    }
+
+    .hero p {
+        font-size: 1.4rem;
+        margin-bottom: 40px;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+        opacity: 0.95;
+        line-height: 1.5;
+    }
+
+    /* Section Title */
+    .section-title {
+        text-align: center;
+        margin-bottom: 70px;
+    }
+
+    .section-title h2 {
+        font-size: 2.8rem;
+        position: relative;
+        display: inline-block;
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+        font-weight: 800;
+    }
+
+    .section-title h2::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 4px;
+        background-color: var(--accent-gold);
+        border-radius: 2px;
+    }
+
+    .section-title p {
+        max-width: 700px;
+        margin: 0 auto;
+        color: var(--text-light);
+        font-size: 1.15rem;
+        line-height: 1.7;
+    }
+    /* Courses Section */
+    #courses {
+        background-color: var(--bg-light);
+        position: relative;
+    }
+
+    #courses::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 300px;
+        height: 300px;
+        background: var(--blue-gradient);
+        opacity: 0.05;
+        border-radius: 50%;
+        transform: translate(150px, -150px);
+    }
+
+    #courses::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 200px;
+        height: 200px;
+        background: var(--gold-gradient);
+        opacity: 0.05;
+        border-radius: 50%;
+        transform: translate(-100px, 100px);
+    }
+
+    .tabs {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 50px;
+        border-bottom: 1px solid var(--border-color);
+        position: relative;
+        z-index: 2;
+    }
+
+    .tab-trigger {
+        padding: 18px 40px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-weight: 700;
+        color: var(--text-light);
+        position: relative;
+        font-size: 1.15rem;
+        transition: all 0.3s ease;
+    }
+
+    .tab-trigger.active {
+        color: var(--secondary-color);
+    }
+
+    .tab-trigger:hover {
+        color: var(--secondary-color);
+    }
+
+    .tab-trigger.active::after {
+        content: '';
+        position: absolute;
+        bottom: -1px;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background-color: var(--secondary-color);
+    }
+
+    .tab-content {
+        display: none;
+    }
+
+    .tab-content.active {
+        display: block;
+        animation: fadeIn 0.5s ease;
+    }
+
+    @keyframes fadeIn {
+        0% { opacity: 0; transform: translateY(20px); }
+        100% { opacity: 1; transform: translateY(0); }
+    }
+
+    .course-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+        gap: 30px;
+        position: relative;
+        z-index: 2;
+    }
+
+    .course-card {
+        background-color: white;
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: var(--card-shadow);
+        transition: transform 0.4s ease, box-shadow 0.4s ease;
+        border: 1px solid rgba(0, 0, 0, 0.03);
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .course-card:hover {
+        transform: translateY(-10px);
+        box-shadow: var(--hover-shadow);
+    }
+
+    .course-image {
+        height: 220px;
+        background-color: #e9ecef;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+    }
+
+    .course-image::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 60%;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+    }
+
+    .course-content {
+        padding: 28px;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .course-title {
+        font-size: 1.4rem;
+        margin-bottom: 12px;
+        line-height: 1.4;
+        color: var(--primary-color);
+    }
+
+    .course-description {
+        color: var(--text-light);
+        margin-bottom: 20px;
+        font-size: 1rem;
+        line-height: 1.6;
+        flex-grow: 1;
+    }
+
+    .course-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        margin-bottom: 20px;
+        font-size: 0.95rem;
+        color: var(--text-light);
+        border-top: 1px solid var(--border-color);
+        padding-top: 15px;
+    }
+
+    .course-meta span {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        font-weight: 500;
+    }
+
+    .course-footer {
+        padding: 0 28px 28px;
+        text-align: center;
+    }
+
+    .course-footer .btn-simple {
+        width: 100%;
+        border-radius: 30px;
+        font-weight: 600;
+        text-transform: none;
+    }
+
+    /* Course Modules Section */
+    .modules {
+        background-color: #f1f5f9;
+        position: relative;
+    }
+
+    .modules::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%230a2540' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E");
+        z-index: 0;
+    }
+
+    .modules .container {
+        position: relative;
+        z-index: 1;
+    }
+
+    .module-tabs {
+        display: flex;
+        overflow-x: auto;
+        margin-bottom: 50px;
+        padding-bottom: 15px;
+        gap: 12px;
+        justify-content: center;
+        scrollbar-width: thin;
+        scrollbar-color: var(--secondary-color) #f1f1f1;
+    }
+
+    .module-tabs::-webkit-scrollbar {
+        height: 5px;
+    }
+
+    .module-tabs::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        border-radius: 10px;
+    }
+
+    .module-tabs::-webkit-scrollbar-thumb {
+        background: var(--secondary-color);
+        border-radius: 10px;
+    }
+
+    .module-tab {
+        padding: 14px 28px;
+        white-space: nowrap;
+        cursor: pointer;
+        border: none;
+        background: rgba(255, 255, 255, 0.8);
+        font-weight: 600;
+        color: var(--text-light);
+        position: relative;
+        border-radius: 30px;
+        transition: all 0.3s ease;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    }
+
+    .module-tab.active {
+        color: white;
+        background: var(--secondary-color);
+        box-shadow: 0 5px 15px rgba(0, 184, 217, 0.3);
+    }
+
+    .module-tab:hover:not(.active) {
+        background: rgba(255, 255, 255, 0.95);
+        color: var(--secondary-color);
+        box-shadow: 0 5px 15px rgba(0, 184, 217, 0.15);
+    }
+
+    .module-content {
+        display: none;
+    }
+
+    .module-content.active {
+        display: block;
+        animation: fadeIn 0.5s ease;
+    }
+
+    .module-header {
+        display: flex;
+        align-items: center;
+        margin-bottom: 50px;
+        padding: 35px;
+        background-color: white;
+        border-radius: 16px;
+        box-shadow: var(--card-shadow);
+    }
+
+    .module-icon {
+        width: 80px;
+        height: 80px;
+        background: var(--blue-gradient);
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 30px;
+        font-size: 2rem;
+        box-shadow: 0 8px 20px rgba(0, 184, 217, 0.25);
+    }
+
+    .module-title-container h3 {
+        font-size: 2rem;
+        margin-bottom: 10px;
+        color: var(--primary-color);
+    }
+
+    .module-title-container p {
+        color: var(--text-light);
+        font-size: 1.15rem;
+    }
+
+    .module-list {
+        margin-top: 50px;
+    }
+
+    .module-item {
+        background-color: white;
+        border-radius: 16px;
+        box-shadow: var(--card-shadow);
+        margin-bottom: 30px;
+        overflow: hidden;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .module-item:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--hover-shadow);
+    }
+
+    .module-item-header {
+        padding: 25px 30px;
+        background-color: #f8f9fa;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-left: 4px solid transparent;
+        transition: all 0.3s ease;
+    }
+
+    .module-item-header:hover {
+        background-color: #f0f2f5;
+    }
+
+    .module-item.active .module-item-header {
+        border-left-color: var(--secondary-color);
+        background-color: #f0f2f5;
+    }
+
+    .module-item-title {
+        font-weight: 600;
+        color: var(--primary-color);
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-size: 1.15rem;
+    }
+
+    .module-item-meta {
+        display: flex;
+        gap: 25px;
+        font-size: 0.95rem;
+        color: var(--text-light);
+        font-weight: 500;
+    }
+
+    .module-item-meta span {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+
+    .module-item-content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.5s ease;
+    }
+
+    .module-item.active .module-item-content {
+        max-height: 1000px;
+    }
+
+    .module-item-body {
+        padding: 30px;
+    }
+
+    .module-item-description {
+        margin-bottom: 25px;
+        color: var(--text-light);
+        line-height: 1.7;
+    }
+
+    .module-item-topics {
+        list-style: none;
+    }
+
+    .module-item-topics li {
+        margin-bottom: 14px;
+        padding-left: 30px;
+        position: relative;
+        line-height: 1.5;
+    }
+
+    .module-item-topics li::before {
+        content: '✓';
+        position: absolute;
+        left: 0;
+        color: var(--secondary-color);
+        font-weight: bold;
+    }
+
+    .module-cta {
+        text-align: center;
+        margin-top: 60px;
+    }
+
+    /* Updated heading styles */
+    .internship-subtitle {
+        text-align: center;
+        margin-bottom: 50px;
+        font-size: 2.5rem;
+        font-weight: 800;
+        color: var(--primary-color);
+        letter-spacing: -0.02em;
+        position: relative;
+        padding-bottom: 15px;
+    }
+
+    .internship-subtitle::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60px;
+        height: 3px;
+        background-color: var(--accent-gold);
+        border-radius: 2px;
+    }
+
+    /* Internship Section */
+    .internships {
+        background-color: white;
+        padding: 100px 0;
+        position: relative;
+    }
+
+    .internship-title {
+        text-align: center;
+        margin-bottom: 20px;
+        color: var(--secondary-color);
+        font-size: 2.2rem;
+        font-weight: 800;
+        letter-spacing: 1px;
+    }
+
+    .internship-cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+        gap: 40px;
+        max-width: 1100px;
+        margin: 0 auto 60px;
+    }
+
+    /* Updated internship card design */
+    .internship-card {
+        background-color: white;
+        border-radius: 16px;
+        padding: 40px 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        box-shadow: var(--card-shadow);
+        transition: transform 0.4s, box-shadow 0.4s;
+        text-decoration: none;
+        height: 100%;
+        position: relative;
+        overflow: hidden;
+        border: 1px solid rgba(0, 0, 0, 0.03);
+    }
+
+    .internship-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 5px;
+        background: var(--blue-gradient);
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.4s ease;
+    }
+
+    .internship-card:hover {
+        transform: translateY(-10px);
+        box-shadow: var(--hover-shadow);
+    }
+
+    .internship-card:hover::before {
+        transform: scaleX(1);
+    }
+
+    .internship-card-title {
+        color: var(--primary-color);
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 20px;
+    }
+
+    .internship-card-image {
+        width: 130px;
+        height: 130px;
+        object-fit: cover;
+        margin-bottom: 25px;
+        border-radius: 50%;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        transition: transform 0.3s;
+    }
+
+    .internship-card:hover .internship-card-image {
+        transform: scale(1.05);
+    }
+
+    .internship-card-description {
+        color: var(--text-light);
+        margin-bottom: 30px;
+        font-size: 1rem;
+        line-height: 1.7;
+        flex-grow: 1;
+    }
+
+    .internship-card-button {
+        background-color: transparent;
+        color: var(--secondary-color);
+        border: 2px solid var(--secondary-color);
+        padding: 12px 30px;
+        font-weight: 600;
+        border-radius: 30px;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        text-decoration: none;
+        display: inline-block;
+        margin-top: auto;
+    }
+
+    .internship-card-button:hover {
+        background-color: var(--secondary-color);
+        color: white;
+        box-shadow: 0 5px 15px rgba(0, 184, 217, 0.25);
+    }
+
+    /* Features Section */
+    .features {
+        background-color: white;
+        position: relative;
+    }
+
+    .features::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 300px;
+        height: 300px;
+        background: var(--blue-gradient);
+        opacity: 0.05;
+        border-radius: 50%;
+        transform: translate(150px, -150px);
+    }
+
+    .features .container {
+        position: relative;
+        z-index: 1;
+    }
+
+    .features-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+        gap: 40px;
+    }
+
+    .feature-card {
+        padding: 45px 35px;
+        text-align: center;
+        border-radius: 16px;
+        transition: all 0.4s ease;
+        background-color: white;
+        box-shadow: var(--card-shadow);
+        position: relative;
+        overflow: hidden;
+        border: 1px solid rgba(0, 0, 0, 0.03);
+        height: 100%;
+    }
+
+    .feature-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 5px;
+        background: var(--blue-gradient);
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.4s ease;
+    }
+
+    .feature-card:hover {
+        transform: translateY(-10px);
+        box-shadow: var(--hover-shadow);
+    }
+
+    .feature-card:hover::before {
+        transform: scaleX(1);
+    }
+
+    .feature-icon {
+        font-size: 2.5rem;
+        color: var(--secondary-color);
+        margin-bottom: 30px;
+        display: inline-block;
+        background: rgba(0, 184, 217, 0.08);
+        width: 90px;
+        height: 90px;
+        line-height: 90px;
+        border-radius: 50%;
+        transition: all 0.3s ease;
+    }
+
+    .feature-card:hover .feature-icon {
+        background: var(--blue-gradient);
+        color: white;
+        transform: rotateY(360deg);
+        box-shadow: 0 8px 20px rgba(0, 184, 217, 0.25);
+    }
+
+    .feature-title {
+        font-size: 1.4rem;
+        margin-bottom: 15px;
+        color: var(--primary-color);
+    }
+
+    /* Partners Section */
+    .partners {
+        background-color: #f1f5f9;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .partners::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%230a2540' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E");
+        z-index: 0;
+    }
+
+    .partners-marquee {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .partners-track {
+        display: flex;
+        animation: marquee 30s linear infinite;
+        width: max-content;
+    }
+
+    @keyframes marquee {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(-50%);
+        }
+    }
+
+    .partner-card {
+        background-color: white;
+        border-radius: 12px;
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
+        margin: 0 25px;
+        min-width: 180px;
+        height: 80px;
+        transition: all 0.3s ease;
+    }
+
+    .partner-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    }
+
+    .partner-card img {
+        max-width: 100%;
+        max-height: 50px;
+        transition: all 0.3s ease;
+        /* Removed filter: grayscale(80%); to show original colors */
+    }
+
+    .partner-card:hover img {
+        transform: scale(1.05);
+        /* Removed filter: grayscale(0%); since we're showing original colors by default */
+    }
+
+    /* Testimonials Section */
+    .testimonials {
+        background-color: white;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .testimonials::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 300px;
+        height: 300px;
+        background: var(--blue-gradient);
+        opacity: 0.05;
+        border-radius: 50%;
+        transform: translate(150px, -150px);
+    }
+
+    .testimonials .container {
+        position: relative;
+        z-index: 1;
+    }
+
+    .testimonials-container {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .testimonials-track {
+        display: flex;
+        animation: testimonialMarquee 40s linear infinite;
+        width: max-content;
+    }
+
+    @keyframes testimonialMarquee {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(-50%);
+        }
+    }
+
+    .testimonial-card {
+        background-color: white;
+        border-radius: 16px;
+        padding: 35px;
+        margin: 0 20px;
+        width: 380px;
+        box-shadow: var(--card-shadow);
+        border: 1px solid rgba(0, 0, 0, 0.03);
+        transition: all 0.3s ease;
+        position: relative;
+    }
+
+    .testimonial-card:hover {
+        transform: translateY(-8px);
+        box-shadow: var(--hover-shadow);
+    }
+
+    .testimonial-content {
+        margin-bottom: 25px;
+        font-style: italic;
+        color: var(--text-color);
+        line-height: 1.7;
+        position: relative;
+        padding-left: 25px;
+    }
+
+    .testimonial-content::before {
+        content: '"';
+        position: absolute;
+        left: 0;
+        top: -10px;
+        font-size: 3.5rem;
+        color: var(--secondary-color);
+        opacity: 0.2;
+        line-height: 1;
+    }
+
+    .testimonial-author {
+        display: flex;
+        align-items: center;
+    }
+
+    .testimonial-avatar {
+        width: 65px;
+        height: 65px;
+        border-radius: 50%;
+        background-color: #e9ecef;
+        margin-right: 15px;
+        overflow: hidden;
+        border: 3px solid rgba(0, 184, 217, 0.15);
+    }
+
+    .testimonial-avatar img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .testimonial-info h4 {
+        font-size: 1.15rem;
+        margin-bottom: 5px;
+        color: var(--primary-color);
+    }
+
+    .testimonial-info p {
+        font-size: 0.95rem;
+        color: var(--text-light);
+        margin: 0;
+        font-weight: 500;
+    }
+
+    .testimonial-rating {
+        color: var(--accent-gold);
+        margin-bottom: 15px;
+        font-size: 1.15rem;
+        letter-spacing: 2px;
+    }
+
+    /* Partners Slider Section */
+    .partners-slider {
+        position: relative;
+        overflow: hidden;
+        padding: 20px 0;
+        max-width: 1100px;
+        margin: 0 auto;
+    }
+
+    .partners-track {
+        display: flex;
+        animation: partnerScroll 25s linear infinite;
+        width: max-content;
+    }
+
+    @keyframes partnerScroll {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(-50%);
+        }
+    }
+
+    .partner-logo {
+        width: 200px;
+        height: 100px;
+        margin: 0 35px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /* Removed filter: grayscale(100%); to show original colors */
+        transition: filter 0.5s, transform 0.3s;
+        opacity: 0.9; /* Changed from 0.7 to 0.9 for better visibility */
+    }
+
+    .partner-logo:hover {
+        /* Removed filter: grayscale(0%); since we're showing original colors by default */
+        transform: scale(1.05);
+        opacity: 1;
+    }
+
+    .partner-logo img {
+        max-width: 100%;
+        max-height: 80px;
+    }
+
+    /* About Section */
+    .about {
+        background: var(--premium-gradient);
+        color: white;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .about::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+        background-size: cover;
+        background-position: center;
+        opacity: 0.15;
+        z-index: 0;
+    }
+
+    .about .container {
+        position: relative;
+        z-index: 1;
+    }
+
+    .about h2 {
+        color: white;
+        font-size: 2.8rem;
+        margin-bottom: 30px;
+        font-weight: 800;
+    }
+
+    .about p {
+        font-size: 1.15rem;
+        line-height: 1.8;
+        margin-bottom: 25px;
+        opacity: 0.95;
+    }
+
+    .about-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 70px;
+        align-items: center;
+    }
+
+    .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+
+    .stat-card {
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 16px;
+        padding: 35px 25px;
+        text-align: center;
+        backdrop-filter: blur(10px);
+        transition: all 0.4s ease;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .stat-card:hover {
+        transform: translateY(-8px);
+        background-color: rgba(255, 255, 255, 0.15);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .stat-value {
+        font-size: 3.2rem;
+        font-weight: 800;
+        margin-bottom: 10px;
+        background: linear-gradient(135deg, #ffffff 0%, #ffc107 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        line-height: 1.1;
+    }
+
+    /* Contact Section */
+    #contact {
+        background-color: #f1f5f9;
+        position: relative;
+    }
+
+    #contact::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%230a2540' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E");
+        z-index: 0;
+    }
+
+    .contact-form {
+        max-width: 700px;
+        margin: 0 auto;
+        background-color: white;
+        padding: 50px;
+        border-radius: 16px;
+        box-shadow: var(--card-shadow);
+        border: 1px solid rgba(0, 0, 0, 0.03);
+        position: relative;
+        z-index: 1;
+    }
+
+    .contact-form h4 {
+        margin-bottom: 30px;
+        font-size: 1.8rem;
+        color: var(--primary-color);
+        text-align: center;
+        font-weight: 700;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        width: 100%;
+        padding: 15px 20px;
+        margin-bottom: 25px;
+        border: 1px solid #e0e0e0;
+        border-radius: 10px;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+        background-color: #f9fafc;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+        outline: none;
+        border-color: var(--secondary-color);
+        box-shadow: 0 0 0 3px rgba(0, 184, 217, 0.1);
+        background-color: white;
+    }
+
+    .contact-form textarea {
+        min-height: 180px;
+        resize: vertical;
+    }
+
+    .contact-form input[type="submit"] {
+        background-color: var(--secondary-color);
+        color: white;
+        border: none;
+        padding: 15px 30px;
+        font-weight: 600;
+        font-size: 1.05rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        width: auto;
+        display: block;
+        margin: 0 auto;
+        border-radius: 30px;
+        min-width: 180px;
+    }
+
+    .contact-form input[type="submit"]:hover {
+        background-color: var(--secondary-dark);
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(0, 184, 217, 0.25);
+    }
+
+    /* Legal Section - Enhanced Styling */
+    .legal {
+        background-color: #f8f9fa;
+        position: relative;
+        overflow: hidden;
+        padding: 100px 0;
+    }
+
+    .legal::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 300px;
+        height: 300px;
+        background: var(--blue-gradient);
+        opacity: 0.05;
+        border-radius: 50%;
+        transform: translate(150px, -150px);
+    }
+
+    .legal::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 200px;
+        height: 200px;
+        background: var(--gold-gradient);
+        opacity: 0.05;
+        border-radius: 50%;
+        transform: translate(-100px, 100px);
+    }
+
+    .legal .container {
+        position: relative;
+        z-index: 2;
+    }
+
+    .legal-content {
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+
+    .legal-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        flex-wrap: wrap;
+    }
+
+    .legal-button {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 280px;
+        height: 200px;
+        padding: 30px;
+        background: white;
+        border-radius: 16px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        transition: all 0.4s ease;
+        overflow: hidden;
+        text-decoration: none;
+        color: var(--primary-color);
+        text-align: center;
+        border: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    .legal-button::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 5px;
+        background: var(--blue-gradient);
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.4s ease;
+    }
+
+    .legal-button:hover {
+        transform: translateY(-15px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    }
+
+    .legal-button:hover::before {
+        transform: scaleX(1);
+    }
+
+    .legal-button i {
+        font-size: 3rem;
+        margin-bottom: 20px;
+        color: var(--secondary-color);
+        transition: all 0.4s ease;
+    }
+
+    .legal-button:hover i {
+        transform: scale(1.2);
+    }
+
+    .legal-button-title {
+        font-size: 1.3rem;
+        font-weight: 700;
+        margin-bottom: 10px;
+        color: var(--primary-color);
+    }
+
+    .legal-button-desc {
+        font-size: 0.9rem;
+        color: var(--text-light);
+        line-height: 1.5;
+    }
+
+    /* Privacy Policy Button */
+    .legal-button.privacy::before {
+        background: linear-gradient(135deg, #00b8d9, #0288d1);
+    }
+
+    .legal-button.privacy i {
+        color: #00b8d9;
+    }
+
+    /* Terms & Conditions Button */
+    .legal-button.terms::before {
+        background: linear-gradient(135deg, #0db785, #4caf50);
+    }
+
+    .legal-button.terms i {
+        color: #0db785;
+    }
+
+    /* Return Policy Button */
+    .legal-button.return::before {
+        background: linear-gradient(135deg, #ffb700, #ffd54f);
+    }
+
+    .legal-button.return i {
+        color: #ffb700;
+    }
+
+    /* Responsive Design for Legal Buttons */
+    @media (max-width: 992px) {
+        .legal-buttons {
+            gap: 20px;
+        }
+        
+        .legal-button {
+            width: 250px;
+            height: 180px;
+            padding: 25px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .legal-buttons {
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .legal-button {
+            width: 100%;
+            max-width: 320px;
+        }
+    }
+
+
+    /* Footer */
+    footer {
+        background: var(--premium-gradient);
+        color: white;
+        padding: 100px 0 40px;
+        position: relative;
+    }
+
+    footer::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+        background-size: cover;
+        background-position: center;
+        opacity: 0.08;
+        z-index: 0;
+    }
+
+    footer .container {
+        position: relative;
+        z-index: 1;
+    }
+
+    .footer-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 60px;
+        margin-bottom: 60px;
+    }
+
+    .footer-title {
+        font-size: 1.5rem;
+        color: white;
+        margin-bottom: 30px;
+        position: relative;
+        padding-bottom: 15px;
+        font-weight: 700;
+    }
+
+    .footer-title::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 50px;
+        height: 3px;
+        background-color: var(--secondary-color);
+    }
+
+    .footer-links {
+        list-style: none;
+    }
+
+    .footer-links li {
+        margin-bottom: 18px;
+    }
+
+    .footer-links a {
+        color: rgba(255, 255, 255, 0.85);
+        transition: all 0.3s ease;
+        display: inline-block;
+        font-size: 1.05rem;
+    }
+
+    .footer-links a:hover {
+        color: white;
+        transform: translateX(5px);
+        text-decoration: none;
+    }
+
+    .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding-top: 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .footer-social {
+        display: flex;
+        gap: 20px;
+    }
+
+    .social-icon {
+        color: rgba(255, 255, 255, 0.85);
+        transition: all 0.3s ease;
+        font-size: 1.05rem;
+        padding: 5px;
+    }
+
+    .social-icon:hover {
+        color: var(--secondary-color);
+        transform: translateY(-3px);
+    }
+
+    /* Simple Button Design */
+    .btn-simple {
+        position: relative;
+        display: inline-block;
+        padding: 14px 30px;
+        background-color: white;
+        color: var(--primary-color);
+        border: 2px solid var(--secondary-color);
+        border-radius: 30px;
+        font-weight: 600;
+        font-size: 1rem;
+        text-align: center;
+        text-decoration: none;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 12px rgba(0, 184, 217, 0.12);
+        overflow: hidden;
+        z-index: 1;
+    }
+
+    .btn-simple::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: var(--secondary-color);
+        z-index: -1;
+        transition: transform 0.3s ease;
+        transform: scaleX(0);
+        transform-origin: right;
+    }
+
+    .btn-simple:hover {
+        color: white;
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(0, 184, 217, 0.25);
+    }
+
+    .btn-simple:hover::after {
+        transform: scaleX(1);
+        transform-origin: left;
+    }
+
+    .btn-simple.gold {
+        border-color: var(--accent-gold);
+    }
+
+    .btn-simple.gold::after {
+        background: var(--accent-gold);
+    }
+
+    .btn-simple.gold:hover {
+        box-shadow: 0 8px 20px rgba(255, 193, 7, 0.25);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 992px) {
+        .about-grid {
+            grid-template-columns: 1fr;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+        }
+        
+        section {
+            padding: 80px 0;
+        }
+        
+        .section-title h2 {
+            font-size: 2.4rem;
+        }
+        
+        .contact-form {
+            padding: 40px 30px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .nav-toggle {
+            display: block;
+        }
+
+        .nav-links {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            flex-direction: column;
+            background-color: white;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            z-index: 100;
+        }
+
+        .nav-links.active {
+            display: flex;
+        }
+
+        .nav-links li {
+            margin: 15px 0;
+        }
+
+        .course-grid,
+        .features-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .module-header {
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .module-icon {
+            margin-right: 0;
+            margin-bottom: 20px;
+        }
+
+        .module-item-header {
+            flex-direction: column;
+            gap: 15px;
+            align-items: flex-start;
+        }
+
+        .internship-cards {
+            grid-template-columns: 1fr;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+        }
+        
+        .footer-bottom {
+            flex-direction: column;
+            text-align: center;
+        }
+        
+        .footer-social {
+            margin-top: 15px;
+            justify-content: center;
+        }
+
+        .legal-buttons {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+
+    @media (max-width: 576px) {
+        .stats-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .module-tabs {
+            flex-wrap: wrap;
+        }
+
+        .module-tab {
+            flex: 1 0 calc(50% - 10px);
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        
+        .btn-simple {
+            padding: 12px 25px;
+            font-size: 0.95rem;
+        }
+        
+        .section-title h2 {
+            font-size: 2rem;
+        }
+        
+        .hero h1 {
+            font-size: 2.2rem;
+        }
+        
+        .internship-subtitle {
+            font-size: 2rem;
+        }
+        
+        .feature-card {
+            padding: 35px 25px;
+        }
+    }
+</style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#" class="logo">
+                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/LERN%2C%20GROW%2C%20SUCCEED%20%282%29%20%281%29_page-0001.jpg-8tJYml9rzCDtNuhTTkuSRujVuE4Cfy.jpeg" alt="Persevex Logo">
+                    <span>Persevex</span>
+                </a>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#courses">Courses</a></li>
+                    <li><a href="#internships">Internships</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="blogs-index.html">Blogs</a></li>
+                    <li><a href="carrer.html">Careers</a></li>
+                    <li><a href="#legal">Privacy Policy</a></li>
+                </ul>
+                <button class="nav-toggle" id="navToggle">
+                    <i>☰</i>
+                </button>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1></h1>
+            <p>Join Persevex—Where innovation meets real-world learning through expert education and impactful internships.</p>
+            <a href="#courses" class="btn-simple gold">Explore Courses</a>
+        </div>
+    </section>
+    
+    <!-- Courses Section -->
+    <section id="courses">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Professional Courses</h2>
+                <p>Elevate your skills with our industry-leading courses designed by experts to help you succeed in today's competitive business landscape.</p>
+            </div>
+    
+            <div class="tabs">
+                <button class="tab-trigger active" data-tab="marketing">Management</button>
+                <button class="tab-trigger" data-tab="technical">Technical</button>
+            </div>
+    
+            <!-- Marketing Courses -->
+            <div class="tab-content active" id="marketing">
+                <div class="course-grid">
+                    <!-- Course 1 -->
+                    <div class="course-card">
+                        <div class="course-image" style="background-image: url('https://images.unsplash.com/photo-1591696205602-2f950c417cb9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');"></div>
+                        <div class="course-content">
+                            <h3 class="course-title">Financial Modeling & Analysis</h3>
+                            <p class="course-description">Master advanced financial modeling techniques and valuation methods.</p>
+                            <div class="course-meta">
+                                <span>4.8 ★</span>
+                                <span>1,245 students</span>
+                                <span>8 weeks</span>
+                            </div>
+                        </div>
+                        <div class="course-footer">
+                            <a href="#modules" class="btn-simple">Learn More</a>
+                        </div>
+                    </div>
+    
+                    <!-- Course 2 -->
+                    <div class="course-card">
+                        <div class="course-image" style="background-image: url('https://images.unsplash.com/photo-1611162616475-46b635cb6868?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');"></div>
+                        <div class="course-content">
+                            <h3 class="course-title">Digital Marketing Strategies</h3>
+                            <p class="course-description">Develop comprehensive digital marketing campaigns and analytics.</p>
+                            <div class="course-meta">
+                                <span>4.9 ★</span>
+                                <span>1,332 students</span>
+                                <span>8 weeks</span>
+                            </div>
+                        </div>
+                        <div class="course-footer">
+                            <a href="#modules" class="btn-simple">Learn More</a>
+                        </div>
+                    </div>
+    
+                    <!-- Course 3 -->
+                    <div class="course-card">
+                        <div class="course-image" style="background-image: url('https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');"></div>
+                        <div class="course-content">
+                            <h3 class="course-title">Human Resource Management</h3>
+                            <p class="course-description">Learn the core principles of talent acquisition, employee engagement, and organizational development.</p>
+                            <div class="course-meta">
+                                <span>4.7 ★</span>
+                                <span>1,076 students</span>
+                                <span>8 weeks</span>
+                            </div>
+                        </div>
+                        <div class="course-footer">
+                            <a href="#modules" class="btn-simple">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Technical Courses -->
+            <div class="tab-content" id="technical">
+                <div class="course-grid">
+                    <!-- Course 1 -->
+                    <div class="course-card">
+                        <div class="course-image" style="background-image: url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');"></div>
+                        <div class="course-content">
+                            <h3 class="course-title">Artificial Intelligence</h3>
+                            <p class="course-description">Master AI concepts, algorithms, and applications for solving complex real-world problems.</p>
+                            <div class="course-meta">
+                                <span>4.9 ★</span>
+                                <span>1,456 students</span>
+                                <span>10 weeks</span>
+                            </div>
+                        </div>
+                        <div class="course-footer">
+                            <a href="#modules" class="btn-simple">Learn More</a>
+                        </div>
+                    </div>
+    
+                    <!-- Course 2 -->
+                    <div class="course-card">
+                        <div class="course-image" style="background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');"></div>
+                        <div class="course-content">
+                            <h3 class="course-title">Data Science</h3>
+                            <p class="course-description">Learn to extract insights from data using statistical analysis, visualization, and predictive modeling.</p>
+                            <div class="course-meta">
+                                <span>4.8 ★</span>
+                                <span>1,289 students</span>
+                                <span>12 weeks</span>
+                            </div>
+                        </div>
+                        <div class="course-footer">
+                            <a href="#modules" class="btn-simple">Learn More</a>
+                        </div>
+                    </div>
+    
+                    <!-- Course 3 -->
+                    <div class="course-card">
+                        <div class="course-image" style="background-image: url('https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');"></div>
+                        <div class="course-content">
+                            <h3 class="course-title">Machine Learning</h3>
+                            <p class="course-description">Develop skills in building intelligent systems that can learn from data and make predictions.</p>
+                            <div class="course-meta">
+                                <span>4.7 ★</span>
+                                <span>1,124 students</span>
+                                <span>8 weeks</span>
+                            </div>
+                        </div>
+                        <div class="course-footer">
+                            <a href="#modules" class="btn-simple">Learn More</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Course 4 (New) - Cybersecurity -->
+                    <div class="course-card">
+                        <div class="course-image" style="background-image: url('https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');"></div>
+                        <div class="course-content">
+                            <h3 class="course-title">Cybersecurity</h3>
+                            <p class="course-description">Master the techniques to protect systems, networks, and programs from digital attacks and security threats.</p>
+                            <div class="course-meta">
+                                <span>4.9 ★</span>
+                                <span>978 students</span>
+                                <span>10 weeks</span>
+                            </div>
+                        </div>
+                        <div class="course-footer">
+                            <a href="#modules" class="btn-simple">Learn More</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Course 5 (New) - Web Development -->
+                    <div class="course-card">
+                        <div class="course-image" style="background-image: url('https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');"></div>
+                        <div class="course-content">
+                            <h3 class="course-title">Web Development</h3>
+                            <p class="course-description">Learn to build modern, responsive websites and web applications using the latest technologies and frameworks.</p>
+                            <div class="course-meta">
+                                <span>4.8 ★</span>
+                                <span>1,542 students</span>
+                                <span>12 weeks</span>
+                            </div>
+                        </div>
+                        <div class="course-footer">
+                            <a href="#modules" class="btn-simple">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+    <!-- Course Modules Section -->
+    <section id="modules" class="modules">
+        <div class="container">
+            <div class="section-title">
+                <h2>Detailed Course Modules</h2>
+                <p>Explore our comprehensive curriculum designed to provide you with practical skills and in-depth knowledge.</p>
+            </div>
+    
+            <div class="module-tabs">
+                <button class="module-tab active" data-module="financial-modeling">Financial Modeling</button>
+                <button class="module-tab" data-module="digital-marketing">Digital Marketing</button>
+                <button class="module-tab" data-module="hr-management">HR Management</button>
+                <button class="module-tab" data-module="artificial-intelligence">Artificial Intelligence</button>
+                <button class="module-tab" data-module="data-science">Data Science</button>
+                <button class="module-tab" data-module="machine-learning">Machine Learning</button>
+                <button class="module-tab" data-module="cybersecurity">Cybersecurity</button>
+                <button class="module-tab" data-module="web-development">Web Development</button>
+            </div>
+    
+            <!-- Financial Modeling Modules -->
+            <div class="module-content active" id="financial-modeling-content">
+                <div class="module-header">
+                    <div class="module-icon">📊</div>
+                    <div class="module-title-container">
+                        <h3>Financial Modeling & Analysis</h3>
+                        <p>Master advanced financial modeling techniques and valuation methods</p>
+                    </div>
+                </div>
+    
+                <div class="module-list">
+                    <div class="module-item">
+                        <div class="module-item-header">
+                            <div class="module-item-title">
+                                Module 1: Financial Statements & Analysis
+                            </div>
+                            <div class="module-item-meta">
+                                <span>2 weeks</span>
+                                <span>5 lessons</span>
+                            </div>
+                        </div>
+                        <div class="module-item-content">
+                            <div class="module-item-body">
+                                <p class="module-item-description">Learn to analyze and interpret financial statements to make informed business decisions.</p>
+                                <ul class="module-item-topics">
+                                    <li>Understanding Income Statements, Balance Sheets, and Cash Flow Statements</li>
+                                    <li>Financial Ratio Analysis and Interpretation</li>
+                                    <li>Trend Analysis and Comparative Analysis</li>
+                                    <li>Common-Size Financial Statements</li>
+                                    <li>Financial Statement Forecasting</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="module-item">
+                        <div class="module-item-header">
+                            <div class="module-item-title">
+                                Module 2: Excel for Financial Modeling
+                            </div>
+                            <div class="module-item-meta">
+                                <span>1 week</span>
+                                <span>4 lessons</span>
+                            </div>
+                        </div>
+                        <div class="module-item-content">
+                            <div class="module-item-body">
+                                <p class="module-item-description">Master advanced Excel techniques essential for building robust financial models.</p>
+                                <ul class="module-item-topics">
+                                    <li>Advanced Excel Functions (VLOOKUP, INDEX-MATCH, OFFSET)</li>
+                                    <li>Data Tables and Scenario Analysis</li>
+                                    <li>Sensitivity Analysis and Goal Seek</li>
+                                    <li>Excel Shortcuts and Efficiency Techniques</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="module-item">
+                        <div class="module-item-header">
+                            <div class="module-item-title">
+                                Module 3: Discounted Cash Flow (DCF) Modeling
+                            </div>
+                            <div class="module-item-meta">
+                                <span>2 weeks</span>
+                                <span>6 lessons</span>
+                            </div>
+                        </div>
+                        <div class="module-item-content">
+                            <div class="module-item-body">
+                                <p class="module-item-description">Build comprehensive DCF models to value companies and investment opportunities.</p>
+                                <ul class="module-item-topics">
+                                    <li>Forecasting Revenue and Expenses</li>
+                                    <li>Calculating Free Cash Flows</li>
+                                    <li>Determining Discount Rates (WACC)</li>
+                                    <li>Terminal Value Calculations</li>
+                                    <li>Sensitivity Analysis and Scenario Modeling</li>
+                                    <li>Building a Complete DCF Model</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="module-item">
+                        <div class="module-item-header">
+                            <div class="module-item-title">
+                                Module 4: M&A Modeling and LBO Analysis
+                            </div>
+                            <div class="module-item-meta">
+                                <span>2 weeks</span>
+                                <span>5 lessons</span>
+                            </div>
+                        </div>
+                        <div class="module-item-content">
+                            <div class="module-item-body">
+                                <p class="module-item-description">Learn to model mergers, acquisitions, and leveraged buyouts to evaluate deal structures.</p>
+                                <ul class="module-item-topics">
+                                    <li>Accretion/Dilution Analysis</li>
+                                    <li>Synergy Valuation</li>
+                                    <li>Purchase Price Allocation</li>
+                                    <li>LBO Model Structure and Returns Analysis</li>
+                                    <li>Debt Schedules and Covenant Analysis</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="module-item">
+                        <div class="module-item-header">
+                            <div class="module-item-title">
+                                Module 5: Advanced Valuation Techniques
+                            </div>
+                            <div class="module-item-meta">
+                                <span>1 week</span>
+                                <span>4 lessons</span>
+                            </div>
+                        </div>
+                        <div class="module-item-content">
+                            <div class="module-item-body">
+                                <p class="module-item-description">Explore advanced valuation methodologies used by investment professionals.</p>
+                                <ul class="module-item-topics">
+                                    <li>Comparable Company Analysis</li>
+                                    <li>Precedent Transaction Analysis</li>
+                                    <li>Sum-of-the-Parts Valuation</li>
+                                    <li>Real Options Valuation</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="module-cta">
+                    <a href="fees.html" class="btn-simple gold">Enroll in This Course</a>
+                </div>
+            </div>
+    
+            <!-- Digital Marketing Modules -->
+            <div class="module-content" id="digital-marketing-content">
+                <div class="module-header">
+                    <div class="module-icon">📱</div>
+                    <div class="module-title-container">
+                        <h3>Digital Marketing Strategies</h3>
+                        <p>Develop comprehensive digital marketing campaigns and analytics</p>
+                    </div>
+                </div>
+    
+                <div class="module-list">
+                    <div class="module-item">
+                        <div class="module-item-header">
+                            <div class="module-item-title">
+                                Module 1: Search Engine Optimization (SEO)
+                            </div>
+                            <div class="module-item-meta">
+                                <span>2 weeks</span>
+                                <span>6 lessons</span>
+                            </div>
+                        </div>
+                        <div class="module-item-content">
+                            <div class="module-item-body">
+                                <p class="module-item-description">Master the fundamentals of SEO to improve website visibility and organic traffic.</p>
+                                <ul class="module-item-topics">
+                                    <li>Keyword Research and Analysis</li>
+                                    <li>On-Page SEO Optimization</li>
+                                    <li>Technical SEO Fundamentals</li>
+                                    <li>Link Building Strategies</li>
+                                    <li>Local SEO Techniques</li>
+                                    <li>SEO Analytics and Reporting</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="module-item">
+                        <div class="module-item-header">
+                            <div class="module-item-title">
+                                Module 2: Pay-Per-Click (PPC) Advertising
+                            </div>
+                            <div class="module-item-meta">
+                                <span>1 week</span>
+                                <span>5 lessons</span>
+                            </div>
+                        </div>
+                        <div class="module-item-content">
+                            <div class="module-item-body">
+                                <p class="module-item-description">Learn to create and manage effective paid advertising campaigns across multiple platforms.</p>
+                                <ul class="module-item-topics">
+                                    <li>Google Ads Campaign Structure</li>
+                                    <li>Keyword Match Types and Bidding Strategies</li>
+                                    <li>Ad Copywriting and Testing</li>
+                                    <li>Display and Remarketing Campaigns</li>
+                                    <li>PPC Analytics and Optimization</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="module-item">
+                        <div class="module-item-header">
+                            <div class="module-item-title">
+                                Module 3: Social Media Marketing
+                            </div>
+                            <div class="module-item-meta">
+                                <span>2 weeks</span>
+                                <span>7 lessons</span>
+                            </div>
+                        </div>
+                        <div class="module-item-content">
+                            <div class="module-item-body">
+                                <p class="module-item-description">Develop strategies for effective social media marketing across multiple platforms.</p>
+                                <ul class="module-item-topics">
+                                    <li>Platform-Specific Strategies (Facebook, Instagram, LinkedIn, Twitter)</li>
+                                    <li>Content Creation and Curation</li>
+                                    <li>Community Management and Engagement</li>
+                                    <li>Social Media Advertising</li>
+                                    <li>Influencer Marketing Strategies</li>
+                                    <li>Social Media Analytics and ROI Measurement</li>
+                                    <li>Social Listening and Reputation Management</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="module-item">
+                        <div class="module-item-header">
+                            <div class="module-item-title">
+                                Module 4: Email Marketing
+                            </div>
+                            <div class="module-item-meta">
+                                <span>1 week</span>
+                                <span>4 lessons</span>
+                            </div>
+                        </div>
+                        <div class="module-item-content">
+                            <div class="module-item-body">
+                                <p class="module-item-description">Master email marketing strategies to build relationships and drive conversions.</p>
+                                <ul class="module-item-topics">
+                                    <li>Building and Segmenting Email Lists</li>
+                                    <li>Email Copywriting and Design</li>
+                                    <li>Automation and Drip Campaigns</li>
+                                    <li>A/B Testing and Optimization</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="module-item">
+                        <div class="module-item-header">
+                            <div class="module-item-title">
+                                Module 5: Digital Analytics
+                            </div>
+                            <div class="module-item-meta">
+                                <span>2 weeks</span>
+                                <span>5 lessons</span>
+                            </div>
+                        </div>
+                        <div class="module-item-content">
+                            <div class="module-item-body">
+                                <p class="module-item-description">Learn to measure, analyze, and optimize digital marketing performance.</p>
+                                <ul class="module-item-topics">
+                                    <li>Google Analytics Implementation and Reporting</li>
+                                    <li>Conversion Tracking and Goal Setting</li>
+                                    <li>Attribution Modeling</li>
+                                    <li>Data Visualization and Dashboards</li>
+                                    <li>Data-Driven Decision Making</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="module-cta">
+                    <a href="fees.html" class="btn-simple gold">Enroll in This Course</a>
+                </div>
+            </div>
+    
+            <!-- HR Management Modules -->
+            <div class="module-content" id="hr-management-content">
+                <div class="module-header">
+                    <div class="module-icon">👥</div>
+                    <div class="module-title-container">
+                        <h3>Human Resource Management</h3>
+                        <p>Learn the core principles of talent acquisition, employee engagement, and organizational development</p>
+                    </div>
+                </div>
+    
+                <div class="module-list">
+                    <div class="module-item">
+                        <div class="module-item-header">
+                            <div class="module-item-title">
+                                Module 1: Talent Acquisition
+                            </div>
+                            <div class="module-item-meta">
+                                <span>2 weeks</span>
+                                <span>5 lessons</span>
+                            </div>
+                        </div>
+                        <div class="module-item-content">
+                            <div class="module-item-body">
+                                <p class="module-item-description">Master strategies for attracting, recruiting, and selecting top talent.</p>
+                                <ul class="module-item-topics">
+                                    <li>Job Analysis and Competency Mapping</li>
+                                    <li>Recruitment Channels and Employer Branding</li>
+                                    <li>Interviewing Techniques and Assessment Methods</li>
+                                    <li>Candidate Experience and Onboarding</li>
+                                    <li>Recruitment Metrics and Analytics</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="module-item">
+                        <div class="module-item-header">
+                            <div class="module-item-title">
+                                Module 2: Performance Management
+                            </div>
+                            <div class="module-item-meta">
+                                <span>1 week</span>
+                                <span>4 lessons</span>
+                            </div>
+                        </div>
+                        <div class="module-item-content">
+                            <div class="module-item-body">
+                                <p class="module-item-description">Develop effective performance management systems to drive employee productivity.</p>
+                                <ul class="module-item-topics">
+                                    <li>Goal Setting and KPI Development</li>
+                                    <li>Performance Review Processes</li>
+                                    <li>Feedback Techniques and Coaching</li>
+                                    <li>Performance Improvement Plans</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="module-item">
+                        <div class="module-item-header">
+                            <div class="module-item-title">
+                                Module 3: Learning & Development
+                            </div>
+                            <div class="module-item-meta">
+                                <span>2 weeks</span>
+                                <span>6 lessons</span>
+                            </div>
+                        </div>
+                        <div class="module-item-content">
+                            <div class="module-item-body">
+                                <p class="module-item-description">Learn to design and implement effective training and development programs.</p>
+                                <ul class="module-item-topics">
+                                    <li>Training Needs Analysis</li>
+                                    <li>Learning Program Design and Delivery</li>
+                                    <li>E-Learning and Blended Learning Approaches</li>
+                                    <li>Measuring Training Effectiveness</li>
+                                    <li>Career Development Planning</li>
+                                    <li>Succession Planning</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="module-item">
+                        <div class="module-item-header">
+                            <div class="module-item-title">
+                                Module 4: Compensation & Benefits
+                            </div>
+                            <div class="module-item-meta">
+                                <span>1 week</span>
+                                <span>4 lessons</span>
+                            </div>
+                        </div>
+                        <div class="module-item-content">
+                            <div class="module-item-body">
+                                <p class="module-item-description">Design competitive compensation and benefits packages to attract and retain talent.</p>
+                                <ul class="module-item-topics">
+                                    <li>Salary Structure Design</li>
+                                    <li>Incentive and Bonus Programs</li>
+                                    <li>Benefits Administration</li>
+                                    <li>Total Rewards Strategy</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="module-item">
+                        <div class="module-item-header">
+                            <div class="module-item-title">
+                                Module 5: HR Analytics
+                            </div>
+                            <div class="module-item-meta">
+                                <span>2 weeks</span>
+                                <span>5 lessons</span>
+                            </div>
+                        </div>
+                        <div class="module-item-content">
+                            <div class="module-item-body">
+                                <p class="module-item-description">Leverage data for strategic HR decision-making and workforce planning.</p>
+                                <ul class="module-item-topics">
+                                    <li>HR Metrics and KPIs</li>
+                                    <li>Workforce Analytics and Reporting</li>
+                                    <li>Predictive Analytics in HR</li>
+                                    <li>Data Visualization for HR</li>
+                                    <li>Data-Driven HR Strategy</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="module-cta">
+                    <a href="fees.html" class="btn-simple gold">Enroll in This Course</a>
+                </div>
+            </div>
+    
+            <!-- Artificial Intelligence Modules -->
+            <div class="module-content" id="artificial-intelligence-content">
+                <div class="module-header">
+                    <div class="module-icon">🤖</div>
+                    <div class="module-title-container">
+                        <h3>Artificial Intelligence</h3>
+                        <p>Master AI concepts, algorithms, and applications for solving complex real-world problems</p>
+                    </div>
+                </div>
+    
+                <div class="module-list">
+                    <div class="module-item">
+                        <div class="module-item-header">
+                            <div class="module-item-title">
+                                Module 1: Foundations of AI
+                            </div>
+                            <div class="module-item-meta">
+                                <span>2 weeks</span>
+                                <span>6 lessons</span>
+                            </div>
+                        </div>
+                        <div class="module-item-content">
+                            <div class="module-item-body">
+                                <p class="module-item-description">Understand the core concepts, history, and ethical considerations of artificial intelligence.</p>
+                                <ul class="module-item-topics">
+                                    <li>History and Evolution of AI</li>
+                                    <li>Types of AI: Narrow, General, and Super Intelligence</li>
+                                    <li>AI Ethics and Responsible AI Development</li>
+                                    <li>AI Problem Solving Approaches</li>
+                                    <li>Python Programming for AI</li>
+                                    <li>Mathematics for AI: Linear Algebra and Calculus</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="module-item">
+                        <div class="module-item-header">
+                            <div class="module-item-title">
+                                Module 2: Machine Learning Fundamentals
+                            </div>
+                            <div class="module-item-meta">
+                                <span>3 weeks</span>
+                                <span>8 lessons</span>
+                            </div>
+                        </div>
+                        <div class="module-item-content">
+                            <div class="module-item-body">
+                                <p class="module-item-description">Learn the core principles of machine learning and implement basic algorithms.</p>
+                                <ul class="module-item-topics">
+                                    <li>Supervised vs. Unsupervised Learning</li>
+                                    <li>Regression and Classification Algorithms</li>
+                                    <li>Decision Trees and Random Forests</li>
+                                    <li>Support Vector Machines</li>
+                                    <li>Feature Engineering and Selection</li>
+                                    <li>Model Evaluation and Validation</li>
+                                    <li>Overfitting and Regularization</li>
+                                    <li>Practical Implementation with Scikit-learn</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="module-item">
+                        <div class="module-item-header">
+                            <div class="module-item-title">
+                                Module 3: Neural Networks and Deep Learning
+                            </div>
+                            <div class="module-item-meta">
+                                <span>3 weeks</span>
+                                <span>7 lessons</span>
+                            </div>
+                        </div>
+                        <div class="module-item-content">
+                            <div class="module-item-body">
+                                <p class="module-item-description">Master the architecture and training of neural networks for complex pattern recognition.</p>
+                                <ul class="module-item-topics">
+                                    <li>Neural Network Architecture and Components</li>
+                                    <li>Activation Functions and Backpropagation</li>
+                                    <li>Convolutional Neural Networks (CNNs)</li>
+                                    <li>Recurrent Neural Networks (RNNs) and LSTMs</li>
+                                    <li>Transfer Learning and Fine-tuning</li>
+                                    <li>Deep Learning Frameworks: TensorFlow and PyTorch</li>
+                                    <li>GPU Acceleration and Model Optimization</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="module-item">
+                        <div class="module-item-header">
+                            <div class="module-item-title">
+                                Module 4: Natural Language Processing
+                            </div>
+                            <div class="module-item-meta">
+                                <span>2 weeks</span>
+                                <span>5 lessons</span>
+                            </div>
+                        </div>
+                        <div class="module-item-content">
+                            <div class="module-item-body">
+                                <p class="module-item-description">Learn techniques for processing and understanding human language with AI.</p>
+                                <ul class="module-item-topics">
+                                    <li>Text Preprocessing and Tokenization</li>
+                                    <li>Word Embeddings and Language Models</li>
+                                    <li>Sentiment Analysis and Text Classification</li>
+                                    <li>Named Entity Recognition</li>
+                                    <li>Transformer Models and BERT</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="module-item">
+                        <div class="module-item-header">
+                            <div class="module-item-title">
+                                Module 5: AI Applications and Deployment
+                            </div>
+                            <div class="module-item-meta">
+                                <span>2 weeks</span>
+                                <span>6 lessons</span>
+                            </div>
+                        </div>
+                        <div class="module-item-content">
+                            <div class="module-item-body">
+                                <p class="module-item-description">Apply AI to real-world problems and learn to deploy models in production environments.</p>
+                                <ul class="module-item-topics">
+                                    <li>Computer Vision Applications</li>
+                                    <li>Conversational AI and Chatbots</li>
+                                    <li>Recommendation Systems</li>
+                                    <li>Model Deployment and API Development</li>
+                                    <li>MLOps and Model Monitoring</li>
+                                    <li>AI Project Management and Best Practices</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="module-cta">
+                    <a href="fees.html" class="btn-simple gold">Enroll in This Course</a>
+                </div>
+            </div>
+    
+            <!-- Data Science Modules -->
+            <div class="module-content" id="data-science-content">
+                <div class="module-header">
+                    <div class="module-icon">📊</div>
+                    <div class="module-title-container">
+                        <h3>Data Science</h3>
+                        <p>Learn to extract insights from data using statistical analysis, visualization, and predictive modeling</p>
+                    </div>
+                </div>
+    
+                <div class="module-list">
+                    <div class="module-item">
+                        <div class="module-item-header">
+                            <div class="module-item-title">
+                                Module 1: Data Science Fundamentals
+                            </div>
+                            <div class="module-item-meta">
+                                <span>2 weeks</span>
+                                <span>5 lessons</span>
+                            </div>
+                        </div>
+                        <div class="module-item-content">
+                            <div class="module-item-body">
+                                <p class="module-item-description">Understand the data science lifecycle and essential tools for data analysis.</p>
+                                <ul class="module-item-topics">
+                                    <li>Introduction to Data Science and Its Applications</li>
+                                    <li>Data Science Workflow and Methodology</li>
+                                    <li>Python for Data Science: NumPy and Pandas</li>
+                                    <li>Data Collection and Data Wrangling</li>
+                                    <li>Exploratory Data Analysis (EDA)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="module-item">
+                        <div class="module-item-header">
+                            <div class="module-item-title">
+                                Module 2: Statistical Analysis and Visualization
+                            </div>
+                            <div class="module-item-meta">
+                                <span>2 weeks</span>
+                                <span>6 lessons</span>
+                            </div>
+                        </div>
+                        <div class="module-item-content">
+                            <div class="module-item-body">
+                                <p class="module-item-description">Master statistical methods and data visualization techniques for effective data storytelling.</p>
+                                <ul class="module-item-topics">
+                                    <li>Descriptive and Inferential Statistics</li>
+                                    <li>Probability Distributions and Hypothesis Testing</li>
+                                    <li>Correlation and Regression Analysis</li>
+                                    <li>Data Visualization Principles</li>
+                                    <li>Visualization Tools: Matplotlib, Seaborn, and Plotly</li>
+                                    <li>Interactive Dashboards with Tableau</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="module-item">
+                        <div class="module-item-header">
+                            <div class="module-item-title">
+                                Module 3: Machine Learning for Data Science
+                            </div>
+                            <div class="module-item-meta">
+                                <span>3 weeks</span>
+                                <span>7 lessons</span>
+                            </div>
+                        </div>
+                        <div class="module-item-content">
+                            <div class="module-item-body">
+                                <p class="module-item-description">Apply machine learning algorithms to solve data science problems and make predictions.</p>
+                                <ul class="module-item-topics">
+                                    <li>Supervised Learning Algorithms</li>
+                                    <li>Unsupervised Learning and Clustering</li>
+                                    <li>Dimensionality Reduction Techniques</li>
+                                    <li>Ensemble Methods</li>
+                                    <li>Time Series Analysis and Forecasting</li>
+                                    <li>Model Selection and Hyperparameter Tuning</li>
+                                    <li>Cross-Validation and Performance Metrics</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="module-item">
+                        <div class="module-item-header">
+                            <div class="module-item-title">
+                                Module 4: Big Data Analytics
+                            </div>
+                            <div class="module-item-meta">
+                                <span>2 weeks</span>
+                                <span>5 lessons</span>
+                            </div>
+                        </div>
+                        <div class="module-item-content">
+                            <div class="module-item-body">
+                                <p class="module-item-description">Learn techniques for processing and analyzing large-scale datasets.</p>
+                                <ul class="module-item-topics">
+                                    <li>Introduction to Big Data Ecosystems</li>
+                                    <li>Distributed Computing with Spark</li>
+                                    <li>SQL for Data Analysis</li>
+                                    <li>NoSQL Databases</li>
+                                    <li>Cloud Computing for Data Science</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="module-item">
+                        <div class="module-item-header">
+                            <div class="module-item-title">
+                                Module 5: Data Science in Practice
+                            </div>
+                            <div class="module-item-meta">
+                                <span>3 weeks</span>
+                                <span>6 lessons</span>
+                            </div>
+                        </div>
+                        <div class="module-item-content">
+                            <div class="module-item-body">
+                                <p class="module-item-description">Apply data science techniques to real-world problems and learn best practices for deployment.</p>
+                                <ul class="module-item-topics">
+                                    <li>End-to-End Data Science Projects</li>
+                                    <li>Feature Engineering in Practice</li>
+                                    <li>Model Deployment and API Development</li>
+                                    <li>Data Ethics and Privacy</li>
+                                    <li>Communicating Data Science Results</li>
+                                    <li>Data Science Project Management</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="module-cta">
+                    <a href="fees.html" class="btn-simple gold">Enroll in This Course</a>
+                </div>
+            </div>
+    
+            <!-- Machine Learning Modules -->
+            <div class="module-content" id="machine-learning-content">
+                <div class="module-header">
+                    <div class="module-icon">🧠</div>
+                    <div class="module-title-container">
+                        <h3>Machine Learning</h3>
+                        <p>Develop skills in building intelligent systems that can learn from data and make predictions</p>
+                    </div>
+                </div>
+    
+                <div class="module-list">
+                    <div class="module-item">
+                        <div class="module-item-header">
+                            <div class="module-item-title">
+                                Module 1: Introduction to Machine Learning
+                            </div>
+                            <div class="module-item-meta">
+                                <span>2 weeks</span>
+                                <span>5 lessons</span>
+                            </div>
+                        </div>
+                        <div class="module-item-content">
+                            <div class="module-item-body">
+                                <p class="module-item-description">Understand the fundamentals of machine learning and its applications.</p>
+                                <ul class="module-item-topics">
+                                    <li>Machine Learning Concepts and Terminology</li>
+                                    <li>Types of Machine Learning: Supervised, Unsupervised, and Reinforcement</li>
+                                    <li>The Machine Learning Pipeline</li>
+                                    <li>Python Libraries for Machine Learning</li>
+                                    <li>Data Preprocessing for Machine Learning</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="module-item">
+                        <div class="module-item-header">
+                            <div class="module-item-title">
+                                Module 2: Supervised Learning Algorithms
+                            </div>
+                            <div class="module-item-meta">
+                                <span>3 weeks</span>
+                                <span>7 lessons</span>
+                            </div>
+                        </div>
+                        <div class="module-item-content">
+                            <div class="module-item-body">
+                                <p class="module-item-description">Master key supervised learning algorithms for classification and regression tasks.</p>
+                                <ul class="module-item-topics">
+                                    <li>Linear and Logistic Regression</li>
+                                    <li>Decision Trees and Random Forests</li>
+                                    <li>Support Vector Machines</li>
+                                    <li>K-Nearest Neighbors</li>
+                                    <li>Naive Bayes Classifiers</li>
+                                    <li>Ensemble Methods: Bagging and Boosting</li>
+                                    <li>Model Evaluation and Selection</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="module-item">
+                        <div class="module-item-header">
+                            <div class="module-item-title">
+                                Module 3: Unsupervised Learning
+                            </div>
+                            <div class="module-item-meta">
+                                <span>2 weeks</span>
+                                <span>5 lessons</span>
+                            </div>
+                        </div>
+                        <div class="module-item-content">
+                            <div class="module-item-body">
+                                <p class="module-item-description">Learn techniques for finding patterns and structure in unlabeled data.</p>
+                                <ul class="module-item-topics">
+                                    <li>Clustering Algorithms: K-Means, DBSCAN, Hierarchical</li>
+                                    <li>Dimensionality Reduction: PCA, t-SNE</li>
+                                    <li>Association Rule Learning</li>
+                                    <li>Anomaly Detection</li>
+                                    <li>Evaluating Unsupervised Learning Models</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="module-item">
+                        <div class="module-item-header">
+                            <div class="module-item-title">
+                                Module 4: Deep Learning Fundamentals
+                            </div>
+                            <div class="module-item-meta">
+                                <span>3 weeks</span>
+                                <span>6 lessons</span>
+                            </div>
+                        </div>
+                        <div class="module-item-content">
+                            <div class="module-item-body">
+                                <p class="module-item-description">Understand neural networks and implement deep learning models for complex tasks.</p>
+                                <ul class="module-item-topics">
+                                    <li>Neural Network Architecture and Training</li>
+                                    <li>Deep Learning Frameworks: TensorFlow and Keras</li>
+                                    <li>Convolutional Neural Networks for Image Processing</li>
+                                    <li>Recurrent Neural Networks for Sequence Data</li>
+                                    <li>Generative Adversarial Networks</li>
+                                    <li>Transfer Learning and Fine-tuning</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="module-item">
+                        <div class="module-item-header">
+                            <div class="module-item-title">
+                                Module 5: Advanced Machine Learning Topics
+                            </div>
+                            <div class="module-item-meta">
+                                <span>2 weeks</span>
+                                <span>6 lessons</span>
+                            </div>
+                        </div>
+                        <div class="module-item-content">
+                            <div class="module-item-body">
+                                <p class="module-item-description">Explore advanced techniques and applications of machine learning.</p>
+                                <ul class="module-item-topics">
+                                    <li>Reinforcement Learning</li>
+                                    <li>Natural Language Processing with Machine Learning</li>
+                                    <li>Computer Vision Applications</li>
+                                    <li>Time Series Forecasting</li>
+                                    <li>Model Deployment and MLOps</li>
+                                    <li>Ethical Considerations in Machine Learning</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="module-cta">
+                    <a href="fees.html" class="btn-simple gold">Enroll in This Course</a>
+                </div>
+            </div>
+            
+            <!-- Cybersecurity Modules (New) -->
+            <div class="module-content" id="cybersecurity-content">
+                <div class="module-header">
+                    <div class="module-icon">🔒</div>
+                    <div class="module-title-container">
+                        <h3>Cybersecurity</h3>
+                        <p>Master the techniques to protect systems, networks, and programs from digital attacks and security threats</p>
+                    </div>
+                </div>
+    
+                <div class="module-list">
+                    <div class="module-item">
+                        <div class="module-item-header">
+                            <div class="module-item-title">
+                                Module 1: Cybersecurity Fundamentals
+                            </div>
+                            <div class="module-item-meta">
+                                <span>2 weeks</span>
+                                <span>6 lessons</span>
+                            </div>
+                        </div>
+                        <div class="module-item-content">
+                            <div class="module-item-body">
+                                <p class="module-item-description">Understand the core concepts, principles, and frameworks of cybersecurity.</p>
+                                <ul class="module-item-topics">
+                                    <li>Introduction to Cybersecurity Landscape</li>
+                                    <li>Security Principles: CIA Triad and Defense in Depth</li>
+                                    <li>Types of Cyber Threats and Attack Vectors</li>
+                                    <li>Security Frameworks and Compliance Standards</li>
+                                    <li>Risk Assessment and Management</li>
+                                    <li>Cybersecurity Ethics and Legal Considerations</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="module-item">
+                        <div class="module-item-header">
+                            <div class="module-item-title">
+                                Module 2: Network Security
+                            </div>
+                            <div class="module-item-meta">
+                                <span>2 weeks</span>
+                                <span>5 lessons</span>
+                            </div>
+                        </div>
+                        <div class="module-item-content">
+                            <div class="module-item-body">
+                                <p class="module-item-description">Learn to secure network infrastructure and protect against network-based attacks.</p>
+                                <ul class="module-item-topics">
+                                    <li>Network Architecture and Security Design</li>
+                                    <li>Firewalls, IDS/IPS, and Network Monitoring</li>
+                                    <li>VPNs and Secure Remote Access</li>
+                                    <li>Wireless Network Security</li>
+                                    <li>Network Vulnerability Assessment and Penetration Testing</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="module-item">
+                        <div class="module-item-header">
+                            <div class="module-item-title">
+                                Module 3: Application and Web Security
+                            </div>
+                            <div class="module-item-meta">
+                                <span>2 weeks</span>
+                                <span>6 lessons</span>
+                            </div>
+                        </div>
+                        <div class="module-item-content">
+                            <div class="module-item-body">
+                                <p class="module-item-description">Master techniques for securing applications and web services against common vulnerabilities.</p>
+                                <ul class="module-item-topics">
+                                    <li>OWASP Top 10 Vulnerabilities</li>
+                                    <li>Secure Coding Practices</li>
+                                    <li>Authentication and Authorization Mechanisms</li>
+                                    <li>API Security</li>
+                                    <li>Web Application Firewalls</li>
+                                    <li>Security Testing and Code Review</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="module-item">
+                        <div class="module-item-header">
+                            <div class="module-item-title">
+                                Module 4: Cryptography and Data Protection
+                            </div>
+                            <div class="module-item-meta">
+                                <span>2 weeks</span>
+                                <span>5 lessons</span>
+                            </div>
+                        </div>
+                        <div class="module-item-content">
+                            <div class="module-item-body">
+                                <p class="module-item-description">Understand cryptographic principles and implement data protection strategies.</p>
+                                <ul class="module-item-topics">
+                                    <li>Cryptographic Algorithms and Protocols</li>
+                                    <li>Public Key Infrastructure (PKI)</li>
+                                    <li>Data Encryption and Hashing</li>
+                                    <li>Digital Signatures and Certificates</li>
+                                    <li>Data Loss Prevention Strategies</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="module-item">
+                        <div class="module-item-header">
+                            <div class="module-item-title">
+                                Module 5: Incident Response and Forensics
+                            </div>
+                            <div class="module-item-meta">
+                                <span>2 weeks</span>
+                                <span>6 lessons</span>
+                            </div>
+                        </div>
+                        <div class="module-item-content">
+                            <div class="module-item-body">
+                                <p class="module-item-description">Learn to respond to security incidents and conduct digital forensic investigations.</p>
+                                <ul class="module-item-topics">
+                                    <li>Incident Response Planning and Procedures</li>
+                                    <li>Digital Forensics Methodology</li>
+                                    <li>Evidence Collection and Handling</li>
+                                    <li>Malware Analysis</li>
+                                    <li>Log Analysis and Security Information Event Management (SIEM)</li>
+                                    <li>Disaster Recovery and Business Continuity</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="module-cta">
+                    <a href="fees.html" class="btn-simple gold">Enroll in This Course</a>
+                </div>
+            </div>
+            <!-- Web Development Modules (New) -->
+            <div class="module-content" id="web-development-content">
+                <div class="module-header">
+                    <div class="module-icon">💻</div>
+                    <div class="module-title-container">
+                        <h3>Web Development</h3>
+                        <p>Learn to build modern, responsive websites and web applications using the latest technologies and frameworks</p>
+                    </div>
+                </div>
+                 <div class="module-list">
+        <div class="module-item">
+            <div class="module-item-header">
+                <div class="module-item-title">
+                    Module 1: Introduction to Web Development
+                </div>
+                <div class="module-item-meta">
+                    <span>2 weeks</span>
+                    <span>4 lessons</span>
+                </div>
+            </div>
+            <div class="module-item-content">
+                <div class="module-item-body">
+                    <p class="module-item-description">Understand how the web works and the fundamentals of frontend and backend development.</p>
+                    <ul class="module-item-topics">
+                        <li>Web Architecture Overview</li>
+                        <li>Frontend vs Backend Development</li>
+                        <li>Tools and Environments</li>
+                        <li>Web Development Roadmap</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="module-item">
+            <div class="module-item-header">
+                <div class="module-item-title">
+                    Module 2: HTML & CSS Essentials
+                </div>
+                <div class="module-item-meta">
+                    <span>2 weeks</span>
+                    <span>5 lessons</span>
+                </div>
+            </div>
+            <div class="module-item-content">
+                <div class="module-item-body">
+                    <p class="module-item-description">Learn how to create the structure and style of web pages using HTML5 and CSS3.</p>
+                    <ul class="module-item-topics">
+                        <li>HTML Elements and Structure</li>
+                        <li>CSS Box Model and Positioning</li>
+                        <li>Responsive Design with Flexbox & Grid</li>
+                        <li>Media Queries and Mobile-First Design</li>
+                        <li>CSS Transitions and Animations</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="module-item">
+            <div class="module-item-header">
+                <div class="module-item-title">
+                    Module 3: JavaScript Programming
+                </div>
+                <div class="module-item-meta">
+                    <span>2 weeks</span>
+                    <span>6 lessons</span>
+                </div>
+            </div>
+            <div class="module-item-content">
+                <div class="module-item-body">
+                    <p class="module-item-description">Gain strong fundamentals in JavaScript to build dynamic and interactive web applications.</p>
+                    <ul class="module-item-topics">
+                        <li>Variables, Functions, and Scope</li>
+                        <li>DOM Manipulation</li>
+                        <li>Events and Event Listeners</li>
+                        <li>ES6+ Features</li>
+                        <li>Asynchronous JavaScript: Promises & Fetch</li>
+                        <li>Error Handling and Debugging</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="module-item">
+            <div class="module-item-header">
+                <div class="module-item-title">
+                    Module 4: Frontend Frameworks with React.js
+                </div>
+                <div class="module-item-meta">
+                    <span>2 weeks</span>
+                    <span>5 lessons</span>
+                </div>
+            </div>
+            <div class="module-item-content">
+                <div class="module-item-body">
+                    <p class="module-item-description">Build scalable user interfaces with component-based architecture using React.</p>
+                    <ul class="module-item-topics">
+                        <li>JSX and Component Structure</li>
+                        <li>State and Props</li>
+                        <li>React Hooks (useState, useEffect)</li>
+                        <li>Routing with React Router</li>
+                        <li>Project: React Todo App</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="module-item">
+            <div class="module-item-header">
+                <div class="module-item-title">
+                    Module 5: Backend Development with Node.js & MongoDB
+                </div>
+                <div class="module-item-meta">
+                    <span>2 weeks</span>
+                    <span>6 lessons</span>
+                </div>
+            </div>
+            <div class="module-item-content">
+                <div class="module-item-body">
+                    <p class="module-item-description">Learn to create RESTful APIs and connect with a database to build full-stack applications.</p>
+                    <ul class="module-item-topics">
+                        <li>Node.js and Express Framework</li>
+                        <li>Creating RESTful APIs</li>
+                        <li>MongoDB and Mongoose</li>
+                        <li>User Authentication with JWT</li>
+                        <li>CRUD Operations</li>
+                        <li>Deploying MERN Stack Applications</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="module-cta">
+        <a href="fees.html" class="btn-simple gold">Enroll in This Course</a>
+    </div>
+</div>
+        </div>
+    </section>
+    
+ <!-- Internship Programs Section -->
+<section id="internships" class="internships">
+    <div class="container">
+        <h2 class="internship-title">INTERNSHIP PROGRAMS</h2>
+        <h3 class="internship-subtitle">MANAGEMENT</h3>
+        
+        <div class="internship-cards">
+            <div class="internship-card">
+                <h3 class="internship-card-title">Digital Marketing</h3>
+                <img src="https://images.unsplash.com/photo-1611162616475-46b635cb6868?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Digital Marketing" class="internship-card-image">
+                <p class="internship-card-description">Gain hands-on experience in digital marketing strategies, social media management, content creation, and analytics.</p>
+                <a href="digital-marketing.html" class="internship-card-button">Learn More</a>
+            </div>
+            
+            <div class="internship-card">
+                <h3 class="internship-card-title">Finance</h3>
+                <img src="https://images.unsplash.com/photo-1579532537598-459ecdaf39cc?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Finance" class="internship-card-image">
+                <p class="internship-card-description">Develop practical skills in financial analysis, modeling, investment strategies, and portfolio management.</p>
+                <a href="finance.html" class="internship-card-button">Learn More</a>
+            </div>
+            
+            <div class="internship-card">
+                <h3 class="internship-card-title">Human Resources</h3>
+                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Human Resources" class="internship-card-image">
+                <p class="internship-card-description">Learn talent acquisition, employee engagement, performance management, and HR analytics in a real-world setting.</p>
+                <a href="human-resources.html" class="internship-card-button">Learn More</a>
+            </div>
+        </div>
+        
+        <h3 class="internship-subtitle">Technical</h3>
+        
+        <div class="internship-cards">
+            <div class="internship-card">
+                <h3 class="internship-card-title">Artificial Intelligence</h3>
+                <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Artificial Intelligence" class="internship-card-image">
+                <p class="internship-card-description">Gain practical experience in AI algorithms, neural networks, and developing intelligent systems for real-world applications.</p>
+                <a href="artificial.html" class="internship-card-button">Learn More</a>
+            </div>
+            
+            <div class="internship-card">
+                <h3 class="internship-card-title">Data Science</h3>
+                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Data Science" class="internship-card-image">
+                <p class="internship-card-description">Work on real data projects involving data analysis, visualization, statistical modeling, and extracting actionable insights.</p>
+                <a href="datascience.html" class="internship-card-button">Learn More</a>
+            </div>
+            
+            <div class="internship-card">
+                <h3 class="internship-card-title">Machine Learning</h3>
+                <img src="https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Machine Learning" class="internship-card-image">
+                <p class="internship-card-description">Develop and implement machine learning models to solve business problems and create predictive analytics solutions.</p>
+                <a href="machinelearning.html" class="internship-card-button">Learn More</a>
+            </div>
+            
+            <div class="internship-card">
+                <h3 class="internship-card-title">Cybersecurity</h3>
+                <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Cybersecurity" class="internship-card-image">
+                <p class="internship-card-description">Learn to identify vulnerabilities, implement security measures, and protect systems from cyber threats and attacks.</p>
+                <a href="cybersecurity.html" class="internship-card-button">Learn More</a>
+            </div>
+            
+            <div class="internship-card">
+                <h3 class="internship-card-title">Web Development</h3>
+                <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Web Development" class="internship-card-image">
+                <p class="internship-card-description">Build responsive websites and web applications using modern frameworks and best practices in front-end and back-end development.</p>
+                <a href="webdevelopment.html" class="internship-card-button">Learn More</a>
+            </div>
+        </div>
+    </div>
+</section>
+    
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <div class="section-title">
+                <h2>Why Choose Persevex</h2>
+                <p>We provide a comprehensive learning experience with features designed to help you succeed in your career journey.</p>
+            </div>
+    
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">★</div>
+                    <h3 class="feature-title">Industry-Leading Mentors</h3>
+                    <p>Learn from top professionals with years of experience in finance and marketing.</p>
+                </div>
+    
+                <div class="feature-card">
+                    <div class="feature-icon">💻</div>
+                    <h3 class="feature-title">LMS Access</h3>
+                    <p>Stay ahead with courses covering the latest trends and technologies in the industry.</p>
+                </div>
+    
+                <div class="feature-card">
+                    <div class="feature-icon">👥</div>
+                    <h3 class="feature-title">Live Interactive Sessions</h3>
+                    <p>Connect with a diverse community of professionals and expand your network.</p>
+                </div>
+    
+                <div class="feature-card">
+                    <div class="feature-icon">🏆</div>
+                    <h3 class="feature-title">Recognized Certifications</h3>
+                    <p>Earn industry-recognized certifications to boost your resume and career prospects.</p>
+                </div>
+    
+                <div class="feature-card">
+                    <div class="feature-icon">⏱️</div>
+                    <h3 class="feature-title">Flexible Learning</h3>
+                    <p>Study at your own pace with lifetime access to course materials and updates.</p>
+                </div>
+    
+                <div class="feature-card">
+                    <div class="feature-icon">🌎</div>
+                    <h3 class="feature-title">Internship Experience</h3>
+                    <p>Access job opportunities and partnerships with leading companies worldwide.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Partners Section -->
+    <section id="partners" class="partners">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Industry Partners</h2>
+                <p>We collaborate with leading companies to ensure our curriculum meets industry standards and to provide exclusive opportunities for our students.</p>
+            </div>
+    
+            <div class="partners-marquee">
+                <div class="partners-track">
+                    <!-- First set of logos -->
+                    <div class="partner-card">
+                        <img src="google_PNG19625.png" alt="Google">
+                    </div>
+                    <div class="partner-card">
+                        <img src="mindtree.png" alt="Mindtree">
+                    </div>
+                    <div class="partner-card">
+                        <img src="Accenture.png" alt="Accenture">
+                    </div>
+                    <div class="partner-card">
+                        <img src="Dell.png" alt="Dell">
+                    </div>
+                    <div class="partner-card">
+                        <img src="Deloitte.png" alt="Deloitte">
+                    </div>
+                    <div class="partner-card">
+                        <img src="Amazon.jpg" alt="Amazon">
+                    </div>
+                    <div class="partner-card">
+                        <img src="wipro.jpg" alt="wipro">
+                    </div>
+                    <div class="partner-card">
+                        <img src="Harman.jpg" alt="Harman">
+                    </div>
+                    <div class="partner-card">
+                        <img src="ey.png" alt="EY">
+                    </div>
+                    <div class="partner-card">
+                        <img src="kpmg.png" alt="KPMG">
+                    </div>
+                    <div class="partner-card">
+                        <img src="PwC.png" alt="PwC">
+                    </div>
+                    <div class="partner-card">
+                        <img src="Infosys.jpg" alt="Infosys">
+                    </div>
+                    <div class="partner-card">
+                        <img src="mindtree.png" alt="Mindtree">
+                    </div>
+                    <div class="partner-card">
+                        <img src="walmart.jpg" alt="Walmart">
+                    </div>
+                    <div class="partner-card">
+                        <img src="TCS.png" alt="TCS">
+                    </div>
+                    
+                    <!-- Duplicate set for continuous scrolling -->
+                    <div class="partner-card">
+                        <img src="kpmg.png" alt="KPMG">
+                    </div>
+                    <div class="partner-card">
+                        <img src="PwC.png" alt="PwC">
+                    </div>
+                    <div class="partner-card">
+                        <img src="ey.png" alt="EY">
+                    </div>
+                    <div class="partner-card">
+                        <img src="google_PNG19625.png" alt="Google">
+                    </div>
+                    <div class="partner-card">
+                        <img src="Deloitte.png" alt="Deloitte">
+                    </div>
+                    <div class="partner-card">
+                        <img src="Amazon.jpg" alt="Amazon">
+                    </div>
+                    <div class="partner-card">
+                        <img src="Infosys.jpg" alt="Infosys">
+                    </div>
+                    <div class="partner-card">
+                        <img src="Dell.png" alt="Dell">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>What Our Students Say</h2>
+                <p>Hear from our students about how our courses have helped them advance their careers and achieve their goals.</p>
+            </div>
+    
+            <div class="testimonials-container">
+                <div class="testimonials-track">
+                    <!-- Testimonial 1 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-rating">★★★★★</div>
+                        <p class="testimonial-content">"Joined Persevex's Digital Marketing course and it exceeded my expectations. From SEO to social media strategy, everything was taught in-depth and practically. I'm now working as a marketing strategist and it's all thanks to the solid foundation I got here."</p>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">
+                                <img src="yf.jpeg" alt="Aryan.">
+                            </div>
+                            <div class="testimonial-info">
+                                <h4>Aryan.</h4>
+                                <p>EY</p>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <!-- Testimonial 2 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-rating">★★★★★</div>
+                        <p class="testimonial-content">"The Finance program at Persevex helped me land a role as an Analyst. The learning was top-notch, the internship was valuable, and the support was great throughout. Highly recommended for anyone serious about finance."</p>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">
+                                <img src="ravi.jpeg" alt="Ravi K.">
+                            </div>
+                            <div class="testimonial-info">
+                                <h4>Ravi K.</h4>
+                                <p>Xaviers</p>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <!-- Testimonial 3 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-rating">★★★★★</div>
+                        <p class="testimonial-content">"Persevex's HR course helped me improve my understanding of people management and workplace dynamics. Their structured content and helpful mentors gave me a clear path to grow in my HR career."</p>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">
+                                <img src="viraat.jpeg" alt="Viraat S R.">
+                            </div>
+                            <div class="testimonial-info">
+                                <h4>Viraat S R.</h4>
+                                <p>Urban Pipers</p>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <!-- Testimonial 4 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-rating">★★★★★</div>
+                        <p class="testimonial-content">"Persevex's internship and training in data science gave me hands-on experience and the technical skills needed to succeed in the field. If you're aiming to upskill and gain real-world exposure, this is the place to start."</p>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">
+                                <img src="Samarth (2).jpeg" alt="Samarth M N.">
+                            </div>
+                            <div class="testimonial-info">
+                                <h4>Samarth M N.</h4>
+                                <p>Cognizant</p>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <!-- Testimonial 5 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-rating">★★★★★</div>
+                        <p class="testimonial-content">"Persevex's Artificial Intelligence course helped me shift careers confidently. The hands-on projects, live sessions, and mentor support made learning enjoyable and effective. I now build and deploy AI models independently."</p>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">
+                                <img src="pramod.jpeg" alt="Pramod C A.">
+                            </div>
+                            <div class="testimonial-info">
+                                <h4>Pramod C A.</h4>
+                                <p>Infosys</p>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <!-- Testimonial 6 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-rating">★★★★★</div>
+                        <p class="testimonial-content">"The Portfolio Management course provided me with a structured approach to asset allocation and risk management. My clients have seen consistent returns even in volatile markets."</p>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">
+                                <img src="https://randomuser.me/api/portraits/men/6.jpg" alt="David K.">
+                            </div>
+                            <div class="testimonial-info">
+                                <h4>David K.</h4>
+                                <p>Goldman Sachs</p>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <!-- Testimonial 7 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-rating">★★★★★</div>
+                        <p class="testimonial-content">"Persevex's internship and training in machine learning gave me practical experience and the confidence to work in the field. If you're looking to upskill and gain real exposure, this is the place to be."</p>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">
+                                <img src="nrupatunga.jpeg" alt="Nrupatunga.">
+                            </div>
+                            <div class="testimonial-info">
+                                <h4>Nrupatunga.</h4>
+                                <p>Accenture</p>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <!-- Duplicate first few testimonials for continuous scrolling -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-rating">★★★★★</div>
+                        <p class="testimonial-content">"Persevex's internship and training in data science gave me hands-on experience and the technical skills needed to succeed in the field. If you're aiming to upskill and gain real-world exposure, this is the place to start."</p>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">
+                                <img src="Samarth (2).jpeg" alt="John D.">
+                            </div>
+                            <div class="testimonial-info">
+                                <h4>Samarth M N.</h4>
+                                <p>Cognizant</p>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="testimonial-card">
+                        <div class="testimonial-rating">★★★★★</div>
+                        <p class="testimonial-content">"The Finance program at Persevex helped me land a role as an Analyst. The learning was top-notch, the internship was valuable, and the support was great throughout. Highly recommended for anyone serious about finance."</p>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">
+                                <img src="ravi.jpeg" alt="Ravi K.">
+                            </div>
+                            <div class="testimonial-info">
+                                <h4>Ravi K.</h4>
+                                <p>Xaviers</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Training Partners Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <div class="section-title">
+                <h2>Recognized By</h2>
+                <p>We collaborate with leading organizations to provide you with the best learning experience</p>
+            </div>
+            <div class="partners-slider">
+                <div class="partners-track">
+                    <div class="partner-logo">
+                        <img src="startup india.jpg" alt="Startup India">
+                    </div>
+                    <div class="partner-logo">
+                        <img src="AICTE.jpg" alt="AICTE">
+                    </div>
+                    <div class="partner-logo">
+                        <img src="msme.png" alt="MSME">
+                    </div>
+                    <div class="partner-logo">
+                        <img src="mcf.jpeg" alt="Ministry">
+                    </div>
+                    <div class="partner-logo">
+                        <img src="iso.png" alt="ISO">
+                    </div>
+                    <!-- Duplicate for continuous scrolling -->
+                    <div class="partner-logo">
+                        <img src="startup india.jpg" alt="Startup India">
+                    </div>
+                    <div class="partner-logo">
+                        <img src="AICTE.jpg" alt="AICTE">
+                    </div>
+                    <div class="partner-logo">
+                        <img src="msme.png" alt="MSME">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>    
+    
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-grid">
+                <div>
+                    <h2>About Persevex</h2>
+                    <p>Persevex is a premier education platform dedicated to empowering individuals with the knowledge and practical skills needed to excel in today's fast-paced business landscape. Our mission is to bridge the gap between traditional education and industry demands by offering cutting-edge learning experiences tailored to real-world challenges.</p>
+                    <p>At Persevex, we prioritize hands-on learning, ensuring that our learners gain practical exposure to the latest business strategies, analytical tools, and digital innovations. Our courses are carefully crafted by industry experts, integrating insights from current market trends, financial strategies, and digital transformation techniques.</p>
+                    <p>Whether you're a professional looking to upskill, an entrepreneur aiming to navigate complex business dynamics, or a student preparing for a successful career, Persevex provides a structured and engaging learning environment. Our expert-led approach ensures that learners stay ahead in an ever-evolving global economy, equipping them with the expertise and confidence to make informed decisions and drive success.</p>
+                </div>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-value">1,500+</div>
+                        <div>Students Enrolled</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">8+</div>
+                        <div>Expert-Led Courses</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">98%</div>
+                        <div>Satisfaction Rate</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">10+</div>
+                        <div>Global Presence</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Get in Touch</h2>
+                <p>Have questions about our courses or need more information? Fill out the form below and our team will get back to you shortly.</p>
+            </div>
+    
+            <div class="contact-form">
+                <h4>Contact Us</h4>
+                <form method="post" name="contact-form">
+                    <input type="text" name="your-name" placeholder="Name" required>
+                    <input type="text" name="your-number" placeholder="Number" required>
+                    <input type="email" name="your-email" placeholder="Email" required>
+                    <textarea name="message" rows="7" placeholder="Your Message" required></textarea>
+                    <input type="submit" value="Submit" id="submit">
+                </form>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Legal Section with Enhanced Styling -->
+    <section id="legal" class="legal">
+        <div class="container">
+            <div class="section-title">
+                <h2>Legal Information</h2>
+                <p>Important documents about our policies, terms, and procedures. Please review these to understand your rights and our responsibilities.</p>
+            </div>
+    
+            <div class="legal-content">
+                <div class="legal-buttons">
+                    <a href="privacy-policy.html" class="legal-button privacy">
+                        <i class="fas fa-shield-alt"></i>
+                        <div class="legal-button-title">Privacy Policy</div>
+                        <div class="legal-button-desc">How we collect, use, and protect your personal information</div>
+                    </a>
+                    
+                    <a href="terms-conditions.html" class="legal-button terms">
+                        <i class="fas fa-file-contract"></i>
+                        <div class="legal-button-title">Terms & Conditions</div>
+                        <div class="legal-button-desc">Rules and guidelines for using our services and platform</div>
+                    </a>
+                    
+                    <a href="refund-cancellation.html" class="legal-button return">
+                        <i class="fas fa-undo-alt"></i>
+                        <div class="legal-button-title">Return Policy</div>
+                        <div class="legal-button-desc">Our refund and cancellation procedures for courses</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h3 class="footer-title">Persevex</h3>
+                    <p>Elevate your career with our cutting-edge courses in financial modeling, digital marketing strategies, human resource management, data science, artificial intelligence and machine learning.</p>
+                </div>
+                <div>
+                    <h3 class="footer-title">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#courses">Courses</a></li>
+                        <li><a href="#modules">Modules</a></li>
+                        <li><a href="#internships">Internships</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#partners">Partners</a></li>
+                        <li><a href="#testimonials">Testimonials</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="terms-conditions.html">Terms & Conditions</a></li>
+                        <li><a href="refund-cancellation.html">Return Policy</a></li>
+                        <li><a href="blogs-index.html">Blogs</a></li>
+                        <li><a href="carrer.html">Careers</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="footer-title">Contact Info</h3>
+                    <ul class="footer-links">
+                        <li><a href="mailto:support@persevex.com">support@persevex.com</a></li>
+                        <li>Bengaluru, India</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear"></span> Persevex. All rights reserved.</p>
+                <div class="footer-social">
+                    <a href="https://www.facebook.com/share/18RDLYELxx/" class="social-icon">Facebook</a>
+                    <a href="https://www.linkedin.com/company/persevex/" class="social-icon">LinkedIn</a>
+                    <a href="https://www.instagram.com/persevex_llp?utm_source=qr&igsh=MWFqYXo0MTMzcHltMQ==" class="social-icon">Instagram</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Scripts -->
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+        // Current Year
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    
+        // Navigation Toggle
+        const navToggle = document.getElementById('navToggle');
+        const navLinks = document.getElementById('navLinks');
+    
+        navToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if (navLinks.classList.contains('active')) {
+                        navLinks.classList.remove('active');
+                    }
+                }
+            });
+        });
+    
+        // Tab Switching
+        const tabTriggers = document.querySelectorAll('.tab-trigger');
+        const tabContents = document.querySelectorAll('.tab-content');
+    
+        tabTriggers.forEach(trigger => {
+            trigger.addEventListener('click', () => {
+                // Remove active class from all triggers and contents
+                tabTriggers.forEach(t => t.classList.remove('active'));
+                tabContents.forEach(c => c.classList.remove('active'));
+                
+                // Add active class to clicked trigger and corresponding content
+                trigger.classList.add('active');
+                const tabId = trigger.getAttribute('data-tab');
+                document.getElementById(tabId).classList.add('active');
+            });
+        });
+    
+        // Module Tab Switching
+        const moduleTabs = document.querySelectorAll('.module-tab');
+        const moduleContents = document.querySelectorAll('.module-content');
+    
+        moduleTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                // Remove active class from all tabs and contents
+                moduleTabs.forEach(t => t.classList.remove('active'));
+                moduleContents.forEach(c => c.classList.remove('active'));
+                
+                // Add active class to clicked tab and corresponding content
+                tab.classList.add('active');
+                const moduleId = tab.getAttribute('data-module');
+                document.getElementById(`${moduleId}-content`).classList.add('active');
+            });
+        });
+    
+        // Module Item Toggle
+        const moduleItems = document.querySelectorAll('.module-item-header');
+        
+        moduleItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const moduleItem = item.parentElement;
+                moduleItem.classList.toggle('active');
+                
+                const content = item.nextElementSibling;
+                if (moduleItem.classList.contains('active')) {
+                    content.style.maxHeight = content.scrollHeight + 'px';
+                } else {
+                    content.style.maxHeight = '0';
+                }
+            });
+        });
+    
+        // Accordion functionality
+        const accordionHeaders = document.querySelectorAll('.accordion-header');
+    
+        accordionHeaders.forEach(header => {
+            header.addEventListener('click', () => {
+                const accordionItem = header.parentElement;
+                const accordionContent = header.nextElementSibling;
+                
+                // Toggle active class
+                accordionItem.classList.toggle('active');
+                
+                // Toggle content height
+                if (accordionItem.classList.contains('active')) {
+                    accordionContent.style.maxHeight = accordionContent.scrollHeight + 'px';
+                } else {
+                    accordionContent.style.maxHeight = '0';
+                }
+            });
+        });
+    
+        // Contact Form Submission to Google Sheets
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbxz88tmPMj4sTN7opcracG0HFwgWn8cUQgEPWRKkUfBcxTlrSOWU4ZcfyPL6BTI6zcK/exec';
+        const form = document.forms['contact-form'];
+    
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+            
+            fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => {
+                alert("Thank you! Your message has been submitted successfully.");
+                form.reset();
+            })
+            .catch(error => {
+                console.error('Error!', error.message);
+                alert("Oops! There was a problem submitting your form. Please try again.");
+            });
+        });
+    </script>
+    </body>
+    </html>
+    
+    <Actions>
+      <Action name="Add more CS/IT courses" description="Add more specialized courses like Cybersecurity, Cloud Computing, or Web Development" />
+      <Action name="Create detailed CS/IT course pages" description="Create dedicated pages for each CS/IT course with more detailed information" />
+      <Action name="Add tech industry partners" description="Add more technology companies to the partners section" />
+      <Action name="Update hero section" description="Update the hero section to highlight the new CS/IT courses" />
+      <Action name="Add tech-related testimonials" description="Add testimonials from students who completed the CS/IT courses" />
+    </Actions>
+    
