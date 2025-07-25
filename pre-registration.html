@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EdTech Onboarding</title>
+    <!-- CSS is unchanged and correct. -->
+    <style>@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');:root{--primary-color:#6e8efb;--secondary-color:#a777e3;--background-color:#f4f7fc;--card-background:#ffffff;--text-color:#121f3e;--border-color:#dfe7f3;--success-color:#28a745;--light-success-bg:#f0fff4}body{font-family:'Poppins',sans-serif;background-color:var(--background-color);margin:0;padding:40px 20px;display:flex;justify-content:center;align-items:flex-start;min-height:100vh}.onboarding-container{background-color:var(--card-background);border-radius:20px;box-shadow:0 15px 40px rgba(0,0,0,0.07);width:100%;max-width:800px;overflow:hidden;display:flex;flex-direction:column}.header{text-align:center;padding:40px;background:linear-gradient(135deg,var(--primary-color),var(--secondary-color));color:white}.header h1{margin:0;font-weight:700;font-size:2.5rem}.header p{margin:5px 0 0;font-size:1.1rem;opacity:0.9}.brand-logo{max-width:120px;margin-bottom:15px}.scrollable-form{padding:40px;overflow-y:auto}.form-section{margin-bottom:40px;border-bottom:1px solid var(--border-color);padding-bottom:30px}.form-section:last-of-type{border-bottom:none;margin-bottom:0;padding-bottom:10px}.form-section h2{font-size:1.8rem;font-weight:600;color:var(--text-color);margin-bottom:25px;position:relative;padding-bottom:10px}.form-section h2::after{content:'';position:absolute;bottom:0;left:0;width:50px;height:4px;background:linear-gradient(90deg,var(--primary-color),var(--secondary-color));border-radius:2px}.input-group{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:25px}.input-field{display:flex;flex-direction:column}.input-field label{margin-bottom:8px;font-weight:600;color:#555;font-size:0.9rem}input,select{width:100%;padding:15px;border:1px solid var(--border-color);border-radius:8px;box-sizing:border-box;font-size:1rem;font-family:'Poppins',sans-serif;transition:border-color .3s ease,box-shadow .3s ease}input:focus,select:focus{border-color:var(--primary-color);box-shadow:0 0 8px rgba(110,142,251,0.3);outline:none}input[readonly]{background-color:#f0f2f5;cursor:not-allowed;font-weight:600;color:#333}.domain-selection{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px}.domain-card{background-color:var(--card-background);border:2px solid var(--border-color);border-radius:12px;padding:25px 20px;box-shadow:0 4px 12px rgba(0,0,0,0.04);transition:all .3s ease;position:relative;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:120px;cursor:pointer}.domain-card:hover{transform:translateY(-5px);border-color:var(--primary-color);box-shadow:0 8px 25px rgba(0,0,0,0.08)}.domain-card.selected{border-color:var(--success-color);background-color:var(--light-success-bg);transform:translateY(-5px);box-shadow:0 10px 30px rgba(40,167,69,0.2)}.domain-card-icon{margin-bottom:15px;color:var(--primary-color);transition:transform .3s ease}.domain-card h3{margin:0;font-family:'Inter',sans-serif;font-size:1.1rem;font-weight:600;color:var(--text-color);line-height:1.4}.domain-card.selected .domain-card-icon{transform:scale(1.1);color:var(--success-color)}#confirmation-step{display:none;margin-top:40px;text-align:center;animation:fadeIn .5s ease-in-out}@keyframes fadeIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}.confirmation-box{padding:25px 30px;border-radius:15px;background-color:var(--light-success-bg);border:1px solid rgba(40,167,69,0.2)}#confirmation-greeting{font-size:1.5rem;color:var(--text-color);margin:0 0 10px}.confirmation-summary-text{color:#555;font-size:1.1rem;margin:0 0 20px}#confirmation-summary{font-weight:600;color:var(--primary-color)}.price-display{background-color:#fff;padding:20px;border-radius:10px;box-shadow:0 4px 15px rgba(0,0,0,0.05);margin-bottom:25px}.price-display .label{font-size:1rem;color:#777}.price-display .amount{font-size:2.2rem;font-weight:700;color:var(--success-color);display:block}.final-commit-btn{width:100%;max-width:450px;padding:18px 40px;border:none;border-radius:50px;cursor:pointer;font-size:1.2rem;font-weight:700;transition:all .3s ease;background:linear-gradient(90deg,var(--success-color),#20bf55);color:#fff;box-shadow:0 5px 15px rgba(40,167,69,0.4)}.final-commit-btn:hover{transform:translateY(-3px);box-shadow:0 8px 25px rgba(40,167,69,0.6)}#payment-warning{color:#d9534f;font-weight:700;margin-top:15px}#security-info{font-size:.9rem;color:#777;margin-top:15px}</style>
+</head>
+<body>
+    <div class="onboarding-container">
+        <header class="header">
+            <img src="logo.jpg" alt="Brand Logo" class="brand-logo">
+            <h1>Secure Your Spot</h1>
+            <p>Complete the steps below to begin your journey.</p>
+        </header>
+
+        <form id="onboardingForm" class="scrollable-form" onsubmit="return false;">
+            <section class="form-section">
+                <h2>1. Your Details</h2>
+                <div class="input-group">
+                    <div class="input-field"><label for="name">Your Name</label><input type="text" id="name" name="name" required></div>
+                    <div class="input-field"><label for="contact">Your Contact Number</label><input type="tel" id="contact" name="contact" required></div>
+                    <div class="input-field"><label for="email">Your Email ID</label><input type="email" id="email" name="email" required></div>
+                    <div class="input-field"><label for="college-email">Your College Email ID (Optional)</label><input type="email" id="college-email" name="collegeEmail"></div>
+                </div>
+            </section>
+
+            <section class="form-section">
+                 <h2>2. Program Information</h2>
+                 <div class="input-group">
+                    <div class="input-field"><label for="executive-name">Your Executive's Name</label><input type="text" id="executive-name" name="executiveName" required></div>
+                    <div class="input-field"><label for="amount">Total Amount Mentioned by Executive</label><input type="number" id="amount" name="amount" required></div>
+                    <div class="input-field"><label for="registration-fee">Registration Fee (to be paid now)</label><input type="text" id="registration-fee" name="registrationFee" value="₹1,000" readonly></div>
+                    <!-- UPDATED: Select now uses full month names as values -->
+                    <div class="input-field"><label for="start-month">Preferred Start Month</label>
+                        <select id="start-month" name="startMonth" required>
+                            <option value="" disabled selected>Select a month...</option>
+                            <option value="July">July</option>
+                            <option value="August">August</option>
+                            <option value="September">September</option>
+                            <option value="October">October</option>
+                        </select>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="form-section">
+                <h2>3. Choose Your Path</h2>
+                <input type="hidden" id="domain-hidden" name="domainHidden" required>
+                <div class="domain-selection">
+                    <div class="domain-card" data-value="ml" data-name="Machine Learning"><div class="domain-card-icon"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8V4H8"/><rect x="4" y="12" width="16" height="8" rx="2"/><path d="M4 14h16"/></svg></div><h3>Machine Learning</h3></div>
+                    <div class="domain-card" data-value="wd" data-name="Web Development"><div class="domain-card-icon"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div><h3>Web Development</h3></div>
+                    <div class="domain-card" data-value="ai" data-name="Artificial Intelligence"><div class="domain-card-icon"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 18a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2"/><path d="M12 14v-4"/><path d="M12 8h.01"/><rect x="4" y="4" width="16" height="16" rx="2"/></svg></div><h3>Artificial Intelligence</h3></div>
+                    <div class="domain-card" data-value="cs" data-name="Cyber Security"><div class="domain-card-icon"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div><h3>Cyber Security</h3></div>
+                    <div class="domain-card" data-value="dm" data-name="Digital Marketing"><div class="domain-card-icon"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 11 18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg></div><h3>Digital Marketing</h3></div>
+                    <div class="domain-card" data-value="fmv" data-name="Finance Modeling & Valuation"><div class="domain-card-icon"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div><h3>Finance Modeling</h3></div>
+                    <div class="domain-card" data-value="ds" data-name="Data Science"><div class="domain-card-icon"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/></svg></div><h3>Data Science</h3></div>
+                    <div class="domain-card" data-value="hrm" data-name="Human Resource Management"><div class="domain-card-icon"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><h3>HR Management</h3></div>
+                </div>
+            </section>
+
+            <section id="confirmation-step">
+                <div class="confirmation-box">
+                    <h2 id="confirmation-greeting">Excellent choice!</h2>
+                    <p class="confirmation-summary-text">You are registering for <b id="confirmation-summary">your chosen field</b>.</p>
+                    <div class="price-display">
+                        <span class="label">Fee Due Now</span>
+                        <span class="amount">₹1,000</span>
+                    </div>
+                </div>
+                <button id="final-commit-btn" class="final-commit-btn">Secure My Spot & Proceed to Payment</button>
+                <p id="payment-warning"></p>
+                <p id="security-info">✓ Secure payment via our trusted partner</p>
+            </section>
+        </form>
+    </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    // --- CONFIGURATION ---
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbxbSffTRJ1lAMe3uLnLul5eKl1uVY8ZpK2g_kzMH6MCmGBM16AVPFma0KcCZOBnhuc/exec';
+    const paymentLink = 'https://rzp.io/rzp/wCOyBm6';
+    
+    // --- ELEMENT REFERENCES ---
+    const form = document.getElementById('onboardingForm');
+    const allInputs = form.querySelectorAll('input, select');
+    const domainContainer = document.querySelector('.domain-selection');
+    const confirmationStep = document.getElementById('confirmation-step');
+    const finalCommitBtn = document.getElementById('final-commit-btn');
+    const paymentWarning = document.getElementById('payment-warning');
+
+    // --- STATE MANAGEMENT ---
+    const sessionId = `session_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
+    let isFormDirty = false; 
+
+    // --- BULLETPROOF DATA GATHERING ---
+    const safeGetValue = (id) => {
+        const element = document.getElementById(id);
+        if (!element) return '';
+        // Trim only if the value is a string, protecting number inputs
+        const value = element.value;
+        return typeof value === 'string' ? value.trim() : value;
+    };
+
+    const getMasterDataObject = () => {
+        const selectedDomainCard = domainContainer.querySelector('.domain-card.selected');
+        return {
+            session_id: sessionId,
+            name: safeGetValue('name'),
+            contact: safeGetValue('contact'),
+            email: safeGetValue('email'),
+            collegeEmail: safeGetValue('college-email'),
+            executiveName: safeGetValue('executive-name'),
+            amount: safeGetValue('amount'),
+            registrationFee: safeGetValue('registration-fee'),
+            startMonth: safeGetValue('start-month'),
+            domainFullName: selectedDomainCard ? selectedDomainCard.dataset.name : ''
+        };
+    };
+    
+    // --- UNBREAKABLE SYNC LOGIC (Debouncing and Failsafe) ---
+    const syncWithGoogleSheet = () => {
+        if (!isFormDirty) return;
+        const data = getMasterDataObject();
+        console.log("SYNCING DATA:", data);
+        fetch(scriptURL, { 
+            method: 'POST', mode: 'no-cors',
+            headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+            body: JSON.stringify(data), keepalive: true 
+        }).catch(err => console.error("Sync Error:", err));
+    };
+
+    const debounce = (func, delay) => {
+        let timeoutId;
+        return (...args) => {
+            clearTimeout(timeoutId);
+            timeoutId = setTimeout(() => { func.apply(this, args); }, delay);
+        };
+    };
+    const debouncedSync = debounce(syncWithGoogleSheet, 750);
+
+    // --- EVENT LISTENERS ---
+    allInputs.forEach(input => {
+        input.addEventListener('input', () => {
+            isFormDirty = true;
+            debouncedSync();
+        });
+    });
+
+    domainContainer.addEventListener('click', (e) => {
+        const clickedCard = e.target.closest('.domain-card');
+        if (!clickedCard) return;
+        if (!isFormDirty) {
+             alert("Please fill out your details in Step 1 & 2 first.");
+             return;
+        };
+        document.getElementById('domain-hidden').value = clickedCard.dataset.value; // for validation
+        
+        const currentlySelected = domainContainer.querySelector('.domain-card.selected');
+        if (currentlySelected) currentlySelected.classList.remove('selected');
+        clickedCard.classList.add('selected');
+        
+        document.getElementById('confirmation-greeting').textContent = `Excellent choice, ${safeGetValue('name').split(' ')[0]}!`;
+        document.getElementById('confirmation-summary').textContent = clickedCard.dataset.name;
+        paymentWarning.innerHTML = "<strong>Important:</strong> Please use the same details on the payment page.";
+        confirmationStep.style.display = 'block';
+        
+        // --- THIS IS THE FIX ---
+        // Restore the smooth scroll to the confirmation section
+        confirmationStep.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        
+        syncWithGoogleSheet(); // Immediate sync
+    });
+
+    finalCommitBtn.addEventListener('click', () => {
+        finalCommitBtn.textContent = 'Redirecting...';
+        finalCommitBtn.disabled = true;
+        syncWithGoogleSheet(); // Final sync before leaving
+        setTimeout(() => { window.location.href = paymentLink; }, 400);
+    });
+
+    document.addEventListener('visibilitychange', () => {
+        if (document.visibilityState === 'hidden') syncWithGoogleSheet();
+    });
+});
+</script>
+</body>
+</html>
