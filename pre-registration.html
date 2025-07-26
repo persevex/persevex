@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EdTech Onboarding</title>
+    <!-- CSS is unchanged and correct. -->
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap");
+      :root {
+        --primary-color: #6e8efb;
+        --secondary-color: #a777e3;
+        --background-color: #f4f7fc;
+        --card-background: #ffffff;
+        --text-color: #121f3e;
+        --border-color: #dfe7f3;
+        --success-color: #28a745;
+        --light-success-bg: #f0fff4;
+      }
+      body {
+        font-family: "Poppins", sans-serif;
+        background-color: var(--background-color);
+        margin: 0;
+        padding: 20px 10px;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        min-height: 100vh;
+      }
+      .onboarding-container {
+        background-color: var(--card-background);
+        border-radius: 20px;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.07);
+        width: 100%;
+        max-width: 800px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+      }
+      .header {
+        text-align: center;
+        padding: 20px 15px;
+        background: linear-gradient(
+          135deg,
+          var(--primary-color),
+          var(--secondary-color)
+        );
+        color: white;
+      }
+      .header h1 {
+        margin: 0;
+        font-weight: 700;
+        font-size: 1.6rem;
+      }
+      .header p {
+        margin: 3px 0 0;
+        font-size: 0.9rem;
+        opacity: 0.9;
+      }
+      .brand-logo {
+        max-width: 80px;
+        margin-bottom: 10px;
+        border-radius: 12px;
+      }
+      .scrollable-form {
+        padding: 30px 20px;
+        overflow-y: auto;
+      }
+      .form-section {
+        margin-bottom: 35px;
+        border-bottom: 1px solid var(--border-color);
+        padding-bottom: 25px;
+      }
+      .form-section:last-of-type {
+        border-bottom: none;
+        margin-bottom: 0;
+        padding-bottom: 10px;
+      }
+      .form-section h2 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: var(--text-color);
+        margin-bottom: 20px;
+        position: relative;
+        padding-bottom: 10px;
+      }
+      .form-section h2::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 50px;
+        height: 4px;
+        background: linear-gradient(
+          90deg,
+          var(--primary-color),
+          var(--secondary-color)
+        );
+        border-radius: 2px;
+      }
+      .input-group {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      .input-field {
+        display: flex;
+        flex-direction: column;
+      }
+      .input-field label {
+        margin-bottom: 8px;
+        font-weight: 600;
+        color: #555;
+        font-size: 0.9rem;
+      }
+      input,
+      select {
+        width: 100%;
+        padding: 15px;
+        border: 1px solid var(--border-color);
+        border-radius: 8px;
+        box-sizing: border-box;
+        font-size: 1rem;
+        font-family: "Poppins", sans-serif;
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+      }
+      input:focus,
+      select:focus {
+        border-color: var(--primary-color);
+        box-shadow: 0 0 8px rgba(110, 142, 251, 0.3);
+        outline: none;
+      }
+      input[readonly] {
+        background-color: #f0f2f5;
+        cursor: not-allowed;
+        font-weight: 600;
+        color: #333;
+      }
+      #confirmation-step {
+        display: none;
+        margin-top: 25px;
+        text-align: center;
+        animation: fadeIn 0.5s ease-in-out;
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .confirmation-box {
+        padding: 15px;
+        border-radius: 12px;
+        background-color: var(--light-success-bg);
+        border: 1px solid rgba(40, 167, 69, 0.2);
+      }
+      #confirmation-greeting {
+        font-size: 1.1rem;
+        color: var(--text-color);
+        margin: 0 0 8px;
+      }
+      .confirmation-summary-text {
+        color: #555;
+        font-size: 0.9rem;
+        margin: 0 0 15px;
+      }
+      #confirmation-summary {
+        font-weight: 600;
+        color: var(--primary-color);
+      }
+      .price-display {
+        background-color: #fff;
+        padding: 15px;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        margin-bottom: 15px;
+      }
+      .price-display .label {
+        font-size: 0.85rem;
+        color: #777;
+      }
+      .price-display .amount {
+        font-size: 1.6rem;
+        font-weight: 700;
+        color: var(--success-color);
+        display: block;
+      }
+      .final-commit-btn {
+        width: 100%;
+        max-width: 100%;
+        padding: 14px 25px;
+        border: none;
+        border-radius: 10px;
+        margin-top: 8px;
+        cursor: pointer;
+        font-size: 1rem;
+        font-weight: 700;
+        transition: all 0.3s ease;
+        background: linear-gradient(90deg, var(--success-color), #20bf55);
+        color: #fff;
+        box-shadow: 0 4px 12px rgba(40, 167, 69, 0.4);
+      }
+      .final-commit-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(40, 167, 69, 0.6);
+      }
+      #payment-warning {
+        color: #d9534f;
+        font-weight: 600;
+        margin-top: 12px;
+        font-size: 0.8rem;
+      }
+      #security-info {
+        font-size: 0.8rem;
+        color: #777;
+        margin-top: 10px;
+      }
+
+      /* Tablet and larger mobile screens */
+      @media (min-width: 480px) {
+        body {
+          padding: 30px 20px;
+        }
+        .header {
+          padding: 25px 25px;
+        }
+        .header h1 {
+          font-size: 1.9rem;
+        }
+        .header p {
+          font-size: 1rem;
+          margin: 4px 0 0;
+        }
+        .brand-logo {
+          max-width: 95px;
+          margin-bottom: 12px;
+        }
+        .scrollable-form {
+          padding: 35px 30px;
+        }
+        .input-group {
+          grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+          gap: 25px;
+        }
+        .confirmation-box {
+          padding: 20px;
+        }
+        #confirmation-greeting {
+          font-size: 1.2rem;
+        }
+        .confirmation-summary-text {
+          font-size: 1rem;
+        }
+        .price-display {
+          padding: 18px;
+        }
+        .price-display .amount {
+          font-size: 1.8rem;
+        }
+        .final-commit-btn {
+          max-width: 350px;
+          padding: 16px 35px;
+          border-radius: 25px;
+          font-size: 1.1rem;
+        }
+      }
+
+      /* Desktop and larger screens */
+      @media (min-width: 768px) {
+        body {
+          padding: 40px 20px;
+        }
+        .header {
+          padding: 35px 40px;
+        }
+        .header h1 {
+          font-size: 2.3rem;
+        }
+        .header p {
+          font-size: 1.1rem;
+          margin: 5px 0 0;
+        }
+        .brand-logo {
+          max-width: 115px;
+          margin-bottom: 15px;
+        }
+        .scrollable-form {
+          padding: 40px;
+        }
+        .form-section {
+          margin-bottom: 40px;
+          padding-bottom: 30px;
+        }
+        .form-section h2 {
+          font-size: 1.8rem;
+          margin-bottom: 25px;
+        }
+        .input-group {
+          grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        }
+        #confirmation-step {
+          margin-top: 35px;
+        }
+        .confirmation-box {
+          padding: 25px 30px;
+        }
+        #confirmation-greeting {
+          font-size: 1.4rem;
+        }
+        .confirmation-summary-text {
+          font-size: 1.1rem;
+        }
+        .price-display {
+          padding: 20px;
+        }
+        .price-display .amount {
+          font-size: 2rem;
+        }
+        .final-commit-btn {
+          max-width: 400px;
+          padding: 18px 40px;
+          border-radius: 30px;
+          font-size: 1.2rem;
+        }
+      }
+
+      /* Very small mobile screens */
+      @media (max-width: 360px) {
+        body {
+          padding: 15px 5px;
+        }
+        .header {
+          padding: 18px 12px;
+        }
+        .header h1 {
+          font-size: 1rem;
+        }
+        .header p {
+          font-size: 0.5rem;
+          margin: 2px 0 0;
+        }
+        .brand-logo {
+          max-width: 50px;
+          margin-bottom: 8px;
+        }
+        .scrollable-form {
+          padding: 25px 15px;
+        }
+        .form-section h2 {
+          font-size: 1.3rem;
+        }
+        input, select {
+          padding: 12px;
+          font-size: 0.95rem;
+        }
+        .confirmation-box {
+          padding: 12px;
+        }
+        #confirmation-greeting {
+          font-size: 1rem;
+        }
+        .confirmation-summary-text {
+          font-size: 0.85rem;
+          margin-bottom: 12px;
+        }
+        .price-display {
+          padding: 12px;
+        }
+        .price-display .label {
+          font-size: 0.8rem;
+        }
+        .price-display .amount {
+          font-size: 1.4rem;
+        }
+        .final-commit-btn {
+          padding: 12px 20px;
+          font-size: 0.95rem;
+        }
+        #payment-warning {
+          font-size: 0.75rem;
+          margin-top: 10px;
+        }
+        #security-info {
+          font-size: 0.75rem;
+          margin-top: 8px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="onboarding-container">
+      <header class="header">
+        <img src="logo.jpg" alt="Brand Logo" class="brand-logo" />
+        <h1>Secure Your Spot</h1>
+        <p>Complete the steps below to begin your journey.</p>
+      </header>
+
+      <form
+        id="onboardingForm"
+        class="scrollable-form"
+        onsubmit="return false;"
+      >
+        <section class="form-section">
+          <h2>1. Your Details</h2>
+          <div class="input-group">
+            <div class="input-field">
+              <label for="name">Your Name</label
+              ><input type="text" id="name" name="name" required />
+            </div>
+            <div class="input-field">
+              <label for="contact">Your Contact Number</label
+              ><input type="tel" id="contact" name="contact" required />
+            </div>
+            <div class="input-field">
+              <label for="email">Your Email ID</label
+              ><input type="email" id="email" name="email" required />
+            </div>
+            <div class="input-field">
+              <label for="college-email">Your College Email ID (Optional)</label
+              ><input type="email" id="college-email" name="collegeEmail" />
+            </div>
+          </div>
+        </section>
+
+        <section class="form-section">
+          <h2>2. Program Information</h2>
+          <div class="input-group">
+            <div class="input-field">
+              <label for="executive-name">Your Executive's Name</label
+              ><input
+                type="text"
+                id="executive-name"
+                name="executiveName"
+                required
+              />
+            </div>
+            <div class="input-field">
+              <label for="registration-fee"
+                >Total amount mentioned by Executive</label
+              ><input
+                type="text"
+                id="amount"
+                name="TotalFee"
+                value="₹3,500"
+                readonly
+              />
+            </div>
+            <div class="input-field">
+              <label for="registration-fee"
+                >Registration Fee (to be paid now)</label
+              ><input
+                type="text"
+                id="registration-fee"
+                name="registrationFee"
+                value="₹1,000"
+                readonly
+              />
+            </div>
+            <div class="input-field">
+              <label for="start-month">Preferred Start Month</label>
+              <select id="start-month" name="startMonth" required>
+                <option value="" disabled selected>Select a month...</option>
+                <option value="August">August</option>
+                <option value="September">September</option>
+                <option value="October">October</option>
+                <option value="November">November</option>
+              </select>
+            </div>
+          </div>
+        </section>
+
+        <section class="form-section">
+          <h2>3. Choose Your Path</h2>
+          <div class="input-group">
+            <div class="input-field">
+              <label for="domain-select">Select Your Domain</label>
+              <select id="domain-select" name="domainSelect" required>
+                <option value="" disabled selected>Choose your path...</option>
+                <option value="ml" data-name="Machine Learning">Machine Learning</option>
+                <option value="wd" data-name="Web Development">Web Development</option>
+                <option value="ai" data-name="Artificial Intelligence">Artificial Intelligence</option>
+                <option value="cs" data-name="Cyber Security">Cyber Security</option>
+                <option value="dm" data-name="Digital Marketing">Digital Marketing</option>
+                <option value="fmv" data-name="Finance Modeling & Valuation">Finance Modeling & Valuation</option>
+                <option value="ds" data-name="Data Science">Data Science</option>
+                <option value="hrm" data-name="Human Resource Management">Human Resource Management</option>
+              </select>
+            </div>
+          </div>
+        </section>
+
+        <section id="confirmation-step">
+          <div class="confirmation-box">
+            <h2 id="confirmation-greeting">Excellent choice!</h2>
+            <p class="confirmation-summary-text">
+              You are registering for
+              <b id="confirmation-summary">your chosen field</b>.
+            </p>
+            <div class="price-display">
+              <span class="label">Fee Due Now</span>
+              <span class="amount">₹1,000</span>
+            </div>
+          </div>
+          <button id="final-commit-btn" class="final-commit-btn">
+            Secure Your Spot & Proceed to Payment
+          </button>
+          <p id="payment-warning"></p>
+          <p id="security-info">✓ Secure payment via our trusted partner</p>
+        </section>
+      </form>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // --- CONFIGURATION ---
+        const scriptURL =
+          "https://script.google.com/macros/s/AKfycbxbSffTRJ1lAMe3uLnLul5eKl1uVY8ZpK2g_kzMH6MCmGBM16AVPFma0KcCZOBnhuc/exec";
+        // UPDATED: This is now the BASE URL for your payment page.
+        const basePaymentLink = "https://pages.razorpay.com/pl_Qwmj20a3WqNoC0/view";
+        const FORM_STORAGE_KEY = "edtechOnboardingData";
+
+        // --- ELEMENT REFERENCES ---
+        const form = document.getElementById("onboardingForm");
+        const allInputs = form.querySelectorAll("input, select");
+        const domainSelect = document.getElementById("domain-select");
+        const confirmationStep = document.getElementById("confirmation-step");
+        const finalCommitBtn = document.getElementById("final-commit-btn");
+        const paymentWarning = document.getElementById("payment-warning");
+
+        // --- STATE MANAGEMENT ---
+        const sessionId = `session_${Date.now()}_${Math.random()
+          .toString(36)
+          .substr(2, 9)}`;
+        let isFormDirty = false;
+
+        // --- DATA PERSISTENCE (localStorage) ---
+        const saveFormState = () => {
+          const data = getMasterDataObject();
+          localStorage.setItem(FORM_STORAGE_KEY, JSON.stringify(data));
+        };
+
+        const loadFormState = () => {
+          const savedData = localStorage.getItem(FORM_STORAGE_KEY);
+          if (!savedData) return;
+
+          const data = JSON.parse(savedData);
+          if (!data.domainFullName) return; // Only restore if they reached the final step
+
+          // Populate all fields
+          document.getElementById("name").value = data.name || "";
+          document.getElementById("contact").value = data.contact || "";
+          document.getElementById("email").value = data.email || "";
+          document.getElementById("college-email").value =
+            data.collegeEmail || "";
+          document.getElementById("executive-name").value =
+            data.executiveName || "";
+          document.getElementById("start-month").value = data.startMonth || "";
+
+          // Select the correct domain option
+          const domainOption = Array.from(domainSelect.options).find(
+            option => option.getAttribute('data-name') === data.domainFullName
+          );
+          if (domainOption) {
+            domainSelect.value = domainOption.value;
+            showConfirmation(domainOption.getAttribute('data-name'));
+          }
+        };
+
+        const showConfirmation = (domainName) => {
+          document.getElementById(
+            "confirmation-greeting"
+          ).textContent = `Welcome back, ${safeGetValue("name").split(" ")[0]}!`;
+          document.getElementById("confirmation-summary").textContent = domainName;
+          paymentWarning.innerHTML =
+            "<strong>Important:</strong> Your details will be pre-filled. Please verify them on the payment page.";
+          confirmationStep.style.display = "block";
+          confirmationStep.scrollIntoView({
+            behavior: "smooth",
+            block: "center",
+          });
+        };
+
+        // --- BULLETPROOF DATA GATHERING ---
+        const safeGetValue = (id) => {
+          const element = document.getElementById(id);
+          if (!element) return "";
+          const value = element.value;
+          return typeof value === "string" ? value.trim() : value;
+        };
+
+        const getMasterDataObject = () => {
+          const selectedOption = domainSelect.options[domainSelect.selectedIndex];
+          return {
+            session_id: sessionId,
+            name: safeGetValue("name"),
+            contact: safeGetValue("contact"),
+            email: safeGetValue("email"),
+            collegeEmail: safeGetValue("college-email"),
+            executiveName: safeGetValue("executive-name"),
+            amount: safeGetValue("amount"),
+            registrationFee: safeGetValue("registration-fee"),
+            startMonth: safeGetValue("start-month"),
+            domainFullName: selectedOption && selectedOption.value ? 
+              selectedOption.getAttribute('data-name') : "",
+          };
+        };
+
+        // --- UNBREAKABLE SYNC LOGIC ---
+        const syncWithGoogleSheet = () => {
+          if (!isFormDirty) return;
+          const data = getMasterDataObject();
+          console.log("SYNCING DATA:", data);
+          fetch(scriptURL, {
+            method: "POST",
+            mode: "no-cors",
+            headers: { "Content-Type": "text/plain;charset=utf-8" },
+            body: JSON.stringify(data),
+            keepalive: true,
+          }).catch((err) => console.error("Sync Error:", err));
+        };
+
+        const debounce = (func, delay) => {
+          let timeoutId;
+          return (...args) => {
+            clearTimeout(timeoutId);
+            timeoutId = setTimeout(() => {
+              func.apply(this, args);
+            }, delay);
+          };
+        };
+        const debouncedSync = debounce(syncWithGoogleSheet, 750);
+
+        // --- VALIDATION LOGIC ---
+        const validateBeforeProceeding = () => {
+          const requiredFields = [
+            { id: "name", name: "Your Name" },
+            { id: "contact", name: "Your Contact Number" },
+            { id: "email", name: "Your Email ID" },
+            { id: "executive-name", name: "Your Executive's Name" },
+            { id: "start-month", name: "Preferred Start Month" },
+            { id: "domain-select", name: "Domain Selection" },
+          ];
+
+          for (const field of requiredFields) {
+            const element = document.getElementById(field.id);
+            if (!element || !element.value.trim()) {
+              alert(
+                `Please fill out the "${field.name}" field before proceeding.`
+              );
+              element?.focus();
+              return false;
+            }
+          }
+          return true;
+        };
+
+        // --- EVENT LISTENERS ---
+        allInputs.forEach((input) => {
+          input.addEventListener("input", () => {
+            isFormDirty = true;
+            debouncedSync();
+          });
+        });
+
+        domainSelect.addEventListener("change", (e) => {
+          if (!validateBeforeProceeding()) {
+            // Reset the dropdown if validation fails
+            domainSelect.value = "";
+            return;
+          }
+
+          const selectedOption = domainSelect.options[domainSelect.selectedIndex];
+          const domainName = selectedOption.getAttribute('data-name');
+
+          document.getElementById(
+            "confirmation-greeting"
+          ).textContent = `Excellent choice, ${
+            safeGetValue("name").split(" ")[0]
+          }!`;
+          showConfirmation(domainName);
+
+          syncWithGoogleSheet(); // Immediate sync
+        });
+
+        finalCommitBtn.addEventListener("click", () => {
+          finalCommitBtn.textContent = "Redirecting...";
+          finalCommitBtn.disabled = true;
+
+          saveFormState();
+          syncWithGoogleSheet(); // Final sync
+
+          // --- 🚀 UPDATED & DYNAMIC PAYMENT LINK LOGIC 🚀 ---
+          const name = safeGetValue("name");
+          const email = safeGetValue("email");
+          const contact = safeGetValue("contact");
+
+          // Encode each piece of data to ensure it's safe for a URL
+          const encodedName = encodeURIComponent(name);
+          const encodedEmail = encodeURIComponent(email);
+          const encodedContact = encodeURIComponent(contact);
+
+          // Construct the final URL with pre-filled Razorpay parameters
+          const finalPaymentURL = `${basePaymentLink}?name=${encodedName}&email=${encodedEmail}&contact=${encodedContact}`;
+
+          setTimeout(() => {
+            // Redirect to the newly constructed, pre-filled payment URL
+            window.location.href = finalPaymentURL;
+          }, 400);
+        });
+
+        document.addEventListener("visibilitychange", () => {
+          if (document.visibilityState === "hidden") syncWithGoogleSheet();
+        });
+
+        // --- INITIALIZATION ---
+        loadFormState();
+      });
+    </script>
+  </body>
+</html>
