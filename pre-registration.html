@@ -507,7 +507,7 @@
             </div>
           </div>
           <button id="final-commit-btn" class="final-commit-btn">
-            Secure Your Spot & Proceed to Payment
+            Proceed to Payment
           </button>
           <p id="payment-warning"></p>
           <p id="security-info">✓ Secure payment via our trusted partner</p>
@@ -577,7 +577,7 @@
           ).textContent = `Welcome back, ${safeGetValue("name").split(" ")[0]}!`;
           document.getElementById("confirmation-summary").textContent = domainName;
           paymentWarning.innerHTML =
-            "<strong>Important:</strong> Your details will be pre-filled. Please verify them on the payment page.";
+            "<strong>Important:</strong> Your details will be pre-filled. No change is required thereafter. Just click and pay!";
           confirmationStep.style.display = "block";
           confirmationStep.scrollIntoView({
             behavior: "smooth",
